@@ -1159,7 +1159,7 @@ export class ModelRouter {
 						signals,
 						extra.freeSwitch,
 						this.qualityMode(resolved, trivial),
-						extra.anchored && this.anchor && this.held?.trivial
+						extra.anchored && this.anchor && (this.held?.trivial || this.held?.kind === "chat")
 							? { model: this.anchor.modelId, level: this.anchor.routerThinkingLevel }
 							: undefined,
 					),

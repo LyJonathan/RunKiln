@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Fixed
+
+- Auto mode keeps routing for the work in progress on "go on" or "continue", even after an "ok" or "thanks": approvals, retries and follow-ups inherit the last substantive task (its difficulty, kind and model) instead of the previous trivial turn, and chains of follow-ups no longer lose difficulty.
+
 ## [0.1.2]
 
 ### Added

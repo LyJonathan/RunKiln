@@ -594,7 +594,7 @@ describe("ModelRouter with quality selection", () => {
 		expect(shortRouteReason(approve)).toBe("algo d0.80 follow-up");
 	});
 
-	it("a classifier follow-up keeps the previous kind and most of its difficulty", async () => {
+	it("a classifier follow-up keeps the previous kind and the work's full difficulty", async () => {
 		const { router } = v2((request) =>
 			request.startsWith("now")
 				? { kind: "chat", difficulty: 0.25, followUp: true }
@@ -603,8 +603,122 @@ describe("ModelRouter with quality selection", () => {
 		await router.route(turn("suffix automaton for 10^6"));
 		const next = await router.route(turn("now make it work for a 10^5-symbol alphabet"));
 		expect(next.kind).toBe("algo");
-		expect(next.difficulty).toBeCloseTo(0.72, 5);
+		expect(next.difficulty).toBeCloseTo(0.8, 5);
+		expect(next.anchored).toBe(true);
 		expect(pairOf(next)).toBe("ds:low");
+	});
+
+	describe("work anchor", () => {
+		it("hard task, then 'ok thanks', then 'go on': routes at the hard task's difficulty and pair", async () => {
+			const { router, classifier } = v2(() => ({ kind: "algo", difficulty: 0.8 }));
+			const hard = await router.route(turn("offline distinct-count queries, n=2e5: implement it"));
+			expect(pairOf(hard)).toBe("ds:low");
+			const ack = await router.route(turn("ok thanks"));
+			expect(ack.source).toBe("heuristic");
+			expect(ack.kind).toBe("chat");
+			expect(ack.difficulty).toBe(0);
+			const goOn = await router.route(turn("go on"));
+			expect(classifier.calls).toHaveLength(1);
+			expect(goOn.source).toBe("follow-up");
+			expect(goOn.anchored).toBe(true);
+			expect(goOn.trivial).toBe(false);
+			expect(goOn.kind).toBe("algo");
+			expect(goOn.difficulty).toBeCloseTo(0.8, 5);
+			expect(pairOf(goOn)).toBe(pairOf(hard));
+			// "continue" right after stays on the work too.
+			const again = await router.route(turn("continue"));
+			expect(again.difficulty).toBeCloseTo(0.8, 5);
+			expect(pairOf(again)).toBe(pairOf(hard));
+		});
+
+		it("after an ack excursion to another pair, 'go on' returns to the work's warm pair", async () => {
+			const { router } = v2(() => ({ kind: "algo", difficulty: 0.8 }));
+			const hard = await router.route(turn("suffix automaton for 10^6"));
+			// The ack lands on another model (the work's is filtered out for it), so the transcript's warm pair is the ack's.
+			router.setModelFilter((model) => model.id !== hard.model.id);
+			const ack = await router.route(turn("ok thanks"));
+			router.setModelFilter(undefined);
+			expect(pairOf(ack)).not.toBe(pairOf(hard));
+			const goOn = await router.route(
+				turn("go on", { warmModelId: ack.model.id, warmThinkingLevel: ack.thinkingLevel }),
+			);
+			expect(goOn.anchored).toBe(true);
+			expect(goOn.difficulty).toBeCloseTo(0.8, 5);
+			expect(pairOf(goOn)).toBe(pairOf(hard));
+		});
+
+		it("a chat turn in between does not replace the work in progress", async () => {
+			const { router } = v2((request) =>
+				request.startsWith("what") ? { kind: "chat", difficulty: 0.1 } : { kind: "algo", difficulty: 0.8 },
+			);
+			const hard = await router.route(turn("suffix automaton for 10^6"));
+			await router.route(turn("what does amortized mean?"));
+			const goOn = await router.route(turn("go on"));
+			expect(goOn.kind).toBe("algo");
+			expect(goOn.difficulty).toBeCloseTo(0.8, 5);
+			expect(pairOf(goOn)).toBe(pairOf(hard));
+		});
+
+		it("three chained classifier follow-ups do not decay", async () => {
+			const { router } = v2((request) =>
+				request.startsWith("now")
+					? { kind: "chat", difficulty: 0.2, followUp: true }
+					: { kind: "algo", difficulty: 0.8 },
+			);
+			await router.route(turn("suffix automaton for 10^6"));
+			for (const text of ["now the alphabet", "now the memory", "now the tests"]) {
+				const next = await router.route(turn(text));
+				expect(next.source).toBe("classifier");
+				expect(next.followUp).toBe(true);
+				expect(next.kind).toBe("algo");
+				expect(next.difficulty).toBeCloseTo(0.8, 5);
+			}
+		});
+
+		it("an idle reset clears the anchor", async () => {
+			let now = 1_000_000;
+			const { router } = v2(() => ({ kind: "algo", difficulty: 0.8 }), BENCHED, () => now);
+			await router.route(turn("suffix automaton for 10^6"));
+			await router.route(turn("ok thanks"));
+			now += CATALOG.tuning.sessionIdleResetMin * 60_000 + 1000;
+			// Idle: the held decision and the anchor are gone, so "go on" has nothing to inherit and is classified.
+			const goOn = await router.route(turn("go on"));
+			expect(goOn.anchored).toBeUndefined();
+			expect(goOn.source).toBe("classifier");
+		});
+
+		it("router.reset() clears the anchor", async () => {
+			const { router } = v2((request) =>
+				request.startsWith("now")
+					? { kind: "chat", difficulty: 0.2, followUp: true }
+					: { kind: "algo", difficulty: 0.8 },
+			);
+			await router.route(turn("suffix automaton for 10^6"));
+			router.reset();
+			const next = await router.route(turn("now the alphabet"));
+			expect(next.anchored).toBeUndefined();
+			expect(next.followUp).toBe(false);
+		});
+
+		it("a plain new task stands on its own and becomes the new anchor", async () => {
+			const { router } = v2((request) =>
+				request === "hard"
+					? { kind: "algo", difficulty: 0.9 }
+					: request.startsWith("now")
+						? { kind: "chat", difficulty: 0.2, followUp: true }
+						: { kind: "code", difficulty: 0.45 },
+			);
+			await router.route(turn("hard"));
+			const fresh = await router.route(turn("add a --since flag to the CLI"));
+			expect(fresh.followUp).toBe(false);
+			expect(fresh.anchored).toBeUndefined();
+			expect(fresh.momentumApplied).toBe(false);
+			expect(fresh.kind).toBe("code");
+			expect(fresh.difficulty).toBeCloseTo(0.45, 5);
+			const next = await router.route(turn("now the --until flag"));
+			expect(next.kind).toBe("code");
+			expect(next.difficulty).toBeCloseTo(0.45, 5);
+		});
 	});
 
 	it("a new self-contained turn does not inherit a hard previous turn; it is picked afresh once the cache is cold", async () => {
