@@ -1,8 +1,10 @@
 import { describe, expect, it } from "vitest";
 import { buildOpenAICompletionsParams, streamSimple } from "../src/api/openai-completions.ts";
 import {
+	capRunInfraImages,
 	fitRunInfraRequestSize,
 	parseRateLimitResetMs,
+	RUNINFRA_MAX_IMAGES_PER_REQUEST,
 	RunInfraRequestGate,
 	runInfraMaxTokens,
 } from "../src/api/runinfra-request.ts";
@@ -243,5 +245,67 @@ describe("rate-limit pacing", () => {
 		);
 		expect(result).toBe("ok");
 		expect(Date.now() - started).toBeGreaterThanOrEqual(70);
+	});
+});
+
+describe("capRunInfraImages", () => {
+	const img = (n: number) => ({ type: "image_url", image_url: { url: `data:image/png;base64,${n}` } });
+	const urls = (messages: Array<{ content?: unknown }>) =>
+		messages.flatMap((m) =>
+			Array.isArray(m.content)
+				? (m.content as Array<{ type: string; image_url?: { url: string } }>)
+						.filter((p) => p.type === "image_url")
+						.map((p) => p.image_url!.url)
+				: [],
+		);
+
+	it("leaves requests at or under the cap alone", () => {
+		const params = { messages: [{ role: "user", content: [img(1), img(2)] }] };
+		expect(capRunInfraImages(params)).toBe(0);
+		expect(urls(params.messages)).toHaveLength(2);
+	});
+
+	it("keeps the newest 8 images across all messages and replaces older ones with text", () => {
+		const params = {
+			messages: [
+				{ role: "system", content: "sys" },
+				{ role: "user", content: [{ type: "text", text: "look" }, img(1), img(2), img(3)] },
+				{ role: "assistant", content: "ok" },
+				{ role: "user", content: [img(4), img(5), img(6), img(7)] },
+				{ role: "user", content: [img(8), img(9), img(10), { type: "text", text: "now" }] },
+			],
+		};
+		expect(capRunInfraImages(params)).toBe(2);
+		expect(urls(params.messages)).toEqual([3, 4, 5, 6, 7, 8, 9, 10].map((n) => `data:image/png;base64,${n}`));
+		expect(RUNINFRA_MAX_IMAGES_PER_REQUEST).toBe(8);
+		const first = params.messages[1].content as Array<{ type: string; text?: string }>;
+		expect(first[0]).toEqual({ type: "text", text: "look" });
+		expect(first[1].type).toBe("text");
+		expect(first[1].text).toContain("omitted");
+	});
+
+	it("is applied to RunInfra requests before sending", async () => {
+		const vision = model({ id: "ornith-1-5-122b", input: ["text", "image"] });
+		const image = { type: "image" as const, data: "AAAA", mimeType: "image/png" };
+		const context: TranscriptContext = {
+			messages: Array.from({ length: 10 }, (_, i) => ({
+				role: "user" as const,
+				content: [{ type: "text" as const, text: `shot ${i}` }, image],
+				timestamp: i,
+			})),
+		} as TranscriptContext;
+		let sent: { messages: Array<{ content?: unknown }> } | undefined;
+		const s = streamSimple(vision, context, {
+			apiKey: "test-key",
+			fetch: (async (_url: unknown, init?: { body?: unknown }) => {
+				sent = JSON.parse(String(init?.body));
+				return new Response("no", { status: 400 });
+			}) as typeof fetch,
+			maxRetries: 0,
+		} as never);
+		for await (const _ of s) {
+		}
+		expect(sent).toBeDefined();
+		expect(urls(sent!.messages)).toHaveLength(8);
 	});
 });
