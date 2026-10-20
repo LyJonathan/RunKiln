@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 
+### Added
+
+- `glm-5-3` (GLM 5.3): $1.30 in, $4.20 out per M tokens, cached input $0.13, 1M context, text only, thinking low/high/max (`high` when nobody picks a level). Manual only: pick it with `/model` or `--model glm-5-3`; auto routing and failover never use it.
+- `ornith-1-5-122b` (Ornith 1.5 122B): $0.20 in, $0.80 out per M tokens, cached input $0.02, 262K context and output, text and image input, tools and JSON mode, thinking off by default. Manual only: pick it with `/model` or `--model ornith-1-5-122b`; auto routing and failover never use it.
+
 ## [0.1.1]
 
 First RunKiln release, forked from Pi (see NOTICE.md; Pi's own changelog is in docs/pi/).
