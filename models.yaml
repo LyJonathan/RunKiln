@@ -1,5 +1,5 @@
 # RunKiln model catalog (RunInfra only).
-# Source: RunInfra GET /v1/models (2026-10-13, new models 2026-10-17) plus our probes (efforts, tools, cache, TTFT).
+# Source: RunInfra GET /v1/models (2026-10-13, new models 2026-10-17 and 2026-10-20) plus our probes (efforts, tools, cache, TTFT).
 # No URLs or keys here: provider endpoint + key live in local config (see Security note).
 # Prices USD per 1M tokens.
 provider: runinfra
@@ -44,6 +44,20 @@ models:
     thinking_field: null
     bench: { ttft_s: 0.47, cache_block: 128, note: two of five short calls took 3-4 s to the first token }
 
+  # Full GLM 5.3 (2026-10-20): about 12x the price of glm-5-3-flash, text only. Manual only: no role, kept out of auto
+  # routing and failover (router.yaml route: false). Pick it with /model or --model glm-5-3.
+  - id: glm-5-3
+    name: GLM 5.3
+    roles: []
+    price: { in: 1.30, out: 4.20, cached_in: 0.13 }
+    context: 1048576
+    images: false
+    reasoning_efforts: [low, high, max]
+    api_default_effort: max
+    harness_effort: high        # max is the API default; high when nobody picks a level
+    thinking_field: null
+    max_concurrent: 14
+
   - id: qwen3-8-27b
     name: Qwen3.8 27B
     roles: [fallback]
@@ -69,6 +83,21 @@ models:
     thinking_field: reasoning_content
     bench: { ttft_s: 0.33, tok_s: 375, cache_hit: 0.99, cache_block: 64, tokens_debounce_prompt: 116, note: tools work }
     max_concurrent: 48
+
+  # Ornith 1.5 122B (2026-10-20): the larger Ornith, 2x the 35B price. Manual only: no role, kept out of auto routing
+  # and failover (router.yaml route: false). Pick it with /model or --model ornith-1-5-122b.
+  - id: ornith-1-5-122b
+    name: Ornith 1.5 122B
+    roles: []
+    price: { in: 0.20, out: 0.80, cached_in: 0.02 }
+    context: 262144
+    images: true
+    reasoning_efforts: []       # API lists none, but "none" works and stops thinking (2026-10-20 probe)
+    api_default_effort: null    # thinks by default
+    harness_effort: none
+    thinking_field: reasoning
+    bench: { note: tools work }
+    max_concurrent: 80
 
   - id: nemotron-3-5-lightning-30b
     name: Nemotron 3.5 Lightning 30B
