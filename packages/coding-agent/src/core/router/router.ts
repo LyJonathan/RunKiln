@@ -84,6 +84,8 @@ export interface RouteDecision {
 	kind?: TaskKind;
 	/** Quality selection: this turn continues the previous one and inherited its classification. */
 	followUp?: boolean;
+	/** Quality selection: a follow-up that inherited the work anchor (the last substantive task), not the previous turn. */
+	anchored?: boolean;
 	/** Quality selection: escalation steps applied after failures (0: none). */
 	escalationSteps?: number;
 	estCostUsd?: number;
@@ -153,6 +155,21 @@ interface HeldDecision {
 	followUp?: boolean;
 }
 
+/**
+ * The work in progress: the last substantive classified turn (a task kind other than chat, above the trivial policy,
+ * from the classifier or its cache, not itself a follow-up). Acks, approvals, retries and follow-ups never replace it,
+ * so "ok thanks" then "go on" continues the work, not the trivial ack.
+ */
+interface WorkAnchor {
+	classification: Classification;
+	baseDifficulty: number;
+	kind: TaskKind;
+	modelId: string;
+	routerThinkingLevel: ModelThinkingLevel;
+	backend?: ClassifierBackend;
+	at: number;
+}
+
 interface Momentum {
 	difficulty: number;
 	skills: SkillProbability[];
@@ -171,6 +188,8 @@ export class ModelRouter {
 	private healthValue: ModelHealth;
 	private failoverPin?: FailoverPin;
 	private held?: HeldDecision;
+	/** Quality selection: the work in progress (see WorkAnchor). Cleared with the held decision on idle and reset. */
+	private anchor?: WorkAnchor;
 	private momentum?: Momentum;
 	private lastDecisionValue?: RouteDecision;
 	private modelFilter?: (model: Model<Api>) => boolean;
@@ -345,6 +364,7 @@ export class ModelRouter {
 	/** Forget momentum and the held decision (new session, or after /new). */
 	reset(): void {
 		this.held = undefined;
+		this.anchor = undefined;
 		this.failoverPin = undefined;
 		this.momentum = undefined;
 		this.lastDecisionValue = undefined;
@@ -794,6 +814,8 @@ export class ModelRouter {
 			this.held = undefined;
 			this.failStreak = 0;
 		}
+		// The anchor lives as long as the session's held decision: idle (or no held decision) drops it too.
+		if (!this.held) this.anchor = undefined;
 		const { signals } = request;
 		const boosts = this.boosts(signals);
 		const boostTotal = boosts.reduce((sum, boost) => sum + boost.delta, 0);
@@ -870,9 +892,13 @@ export class ModelRouter {
 			});
 		}
 		if ((fast === "approval" || fast === "retry") && previous) {
-			return this.decideQuality(request, previous.classification, previous.baseDifficulty, boosts, "follow-up", {
-				backend: previous.backend,
+			// The work being approved is the work in progress (the anchor), not an ack or a chat turn in between.
+			const anchor = this.anchor;
+			const base = anchor ?? previous;
+			return this.decideQuality(request, base.classification, base.baseDifficulty, boosts, "follow-up", {
+				backend: base.backend,
 				followUp: true,
+				anchored: !!anchor,
 				escalation,
 				freeSwitch,
 			});
@@ -920,33 +946,50 @@ export class ModelRouter {
 		let effective = classification;
 		let followUp = false;
 		let momentumApplied = false;
+		const anchor = this.anchor;
 		if (previous && classification.followUp) {
 			followUp = true;
-			const inherited = previous.baseDifficulty * 0.9;
+			// The anchor at full difficulty (chains of follow-ups do not decay), else the previous turn, decayed.
+			const base = anchor ?? previous;
+			const inherited = anchor ? anchor.baseDifficulty : previous.baseDifficulty * 0.9;
 			baseDifficulty = Math.max(baseDifficulty, inherited);
-			const kind = classification.kind === "chat" || !classification.kind ? previous.kind : classification.kind;
+			const kind = classification.kind === "chat" || !classification.kind ? base.kind : classification.kind;
 			effective = {
 				...classification,
 				kind,
-				skills: kind === previous.kind ? previous.classification.skills : classification.skills,
+				skills: kind === base.kind ? base.classification.skills : classification.skills,
 			};
-		} else if (
-			previous &&
-			((classification.ambiguity ?? 0) >= 0.5 || classification.confidence < 0.5) &&
-			previous.baseDifficulty * this.catalog.tuning.momentumDecay > baseDifficulty
-		) {
-			baseDifficulty = previous.baseDifficulty * this.catalog.tuning.momentumDecay;
-			momentumApplied = true;
+		} else if (previous && ((classification.ambiguity ?? 0) >= 0.5 || classification.confidence < 0.5)) {
+			// Momentum from the higher of the previous turn and the work in progress.
+			const carried = Math.max(previous.baseDifficulty, anchor?.baseDifficulty ?? 0) * this.catalog.tuning.momentumDecay;
+			if (carried > baseDifficulty) {
+				baseDifficulty = carried;
+				momentumApplied = true;
+			}
 		}
-		return this.decideQuality(request, effective, baseDifficulty, boosts, source, {
+		const decision = this.decideQuality(request, effective, baseDifficulty, boosts, source, {
 			backend: this.classifier?.backend,
 			classifierMs,
 			rawDifficulty: classification.difficulty,
 			momentumApplied,
 			followUp,
+			anchored: followUp && !!anchor,
 			escalation,
 			freeSwitch,
 		});
+		// A substantive new task becomes the work in progress; follow-ups, chat and trivial turns keep the old one.
+		if (!followUp && decision.source === source && !decision.trivial && decision.kind && decision.kind !== "chat") {
+			this.anchor = {
+				classification: { ...effective, kind: decision.kind },
+				baseDifficulty,
+				kind: decision.kind,
+				modelId: decision.model.id,
+				routerThinkingLevel: decision.routerThinkingLevel,
+				backend: this.classifier?.backend,
+				at: decision.at,
+			};
+		}
+		return decision;
 	}
 
 	/** Warmth inputs of a quality selection: the held pair, the ledger, the session's pace. */
@@ -954,11 +997,24 @@ export class ModelRouter {
 		signals: TurnSignals,
 		freeSwitch: boolean | undefined,
 		mode: QualityModeConfig,
+		prefer?: { model: string; level: ModelThinkingLevel },
 	): Pick<
 		QualitySelectInput,
 		"heldModelId" | "heldThinkingLevel" | "freeSwitch" | "excursionMs" | "sessionUnderway" | "warmTokens"
 	> {
 		const horizonTurns = mode.cache?.horizonTurns ?? 3;
+		// An anchored follow-up after a trivial excursion (an ack on a cheap pair): the work's pair is the one to keep
+		// warm, when the ledger says it still is.
+		if (prefer && (this.warmTokens(prefer.model, prefer.level) ?? 0) > 0) {
+			return {
+				heldModelId: prefer.model,
+				heldThinkingLevel: prefer.level,
+				freeSwitch,
+				excursionMs: (this.turnIntervalMs() ?? 0) * horizonTurns,
+				sessionUnderway: this.turnsRouted > 1,
+				warmTokens: (model, level) => this.warmTokens(model, level) ?? 0,
+			};
+		}
 		return {
 			// The transcript's warm pair, else the pair this router sent last (the ledger says if it is still warm).
 			heldModelId: signals.warmModelId ?? this.lastDecisionValue?.model.id,
@@ -1064,6 +1120,8 @@ export class ModelRouter {
 			rawDifficulty?: number;
 			momentumApplied?: boolean;
 			followUp?: boolean;
+			/** A follow-up that inherited the work anchor. */
+			anchored?: boolean;
 			escalation?: { model: string; level: ModelThinkingLevel; steps: number };
 			inTurnSteps?: number;
 			keepTurnStart?: boolean;
@@ -1097,7 +1155,14 @@ export class ModelRouter {
 			selection = selectByQuality(
 				this.qualityCandidates(candidates.map((entry) => entry.candidate)),
 				{
-					...this.cacheInput(signals, extra.freeSwitch, this.qualityMode(resolved, trivial)),
+					...this.cacheInput(
+						signals,
+						extra.freeSwitch,
+						this.qualityMode(resolved, trivial),
+						extra.anchored && this.anchor && this.held?.trivial
+							? { model: this.anchor.modelId, level: this.anchor.routerThinkingLevel }
+							: undefined,
+					),
 					kind,
 					difficulty: trivial ? Math.min(effective, turnDifficulty) : effective,
 					contextTokens: signals.contextTokens,
@@ -1157,6 +1222,7 @@ export class ModelRouter {
 			classifierMs: extra.classifierMs,
 			kind,
 			followUp: extra.followUp,
+			anchored: extra.anchored || undefined,
 			escalationSteps: steps,
 		});
 	}
@@ -1303,6 +1369,7 @@ export class ModelRouter {
 		error?: string;
 		kind?: TaskKind;
 		followUp?: boolean;
+		anchored?: boolean;
 		escalationSteps?: number;
 		failoverFrom?: string;
 	}): RouteDecision {
@@ -1332,6 +1399,7 @@ export class ModelRouter {
 			selection: input.selection,
 			kind: input.kind,
 			followUp: input.followUp,
+			...(input.anchored ? { anchored: true } : {}),
 			escalationSteps: input.escalationSteps,
 			estCostUsd:
 				input.estCostUsd ?? input.selection?.candidates.find((c) => c.model === input.model.id)?.estCostUsd,
