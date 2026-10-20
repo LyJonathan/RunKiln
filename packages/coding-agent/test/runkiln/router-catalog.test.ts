@@ -24,12 +24,17 @@ describe("router.yaml", () => {
 		for (const id of Object.keys(catalog.models)) expect(ids).toContain(id);
 		expect(Object.keys(catalog.models).sort()).toEqual([
 			"deepseek-v4-1-flash-1017",
+			"glm-5-3",
 			"glm-5-3-flash",
 			"nemotron-3-5-lightning-30b",
+			"ornith-1-5-122b",
 			"ornith-1-5-35b",
 			"qwen3-8-27b",
 		]);
 		expect(catalog.models["nemotron-3-5-lightning-30b"].route).toBe(false);
+		// Manual-only models: /model and settings can pick them, auto routing never does.
+		expect(catalog.models["glm-5-3"].route).toBe(false);
+		expect(catalog.models["ornith-1-5-122b"].route).toBe(false);
 		expect(Object.keys(catalog.modes)).toEqual(["low", "medium", "high"]);
 		expect(catalog.thinking.levels[0]).toEqual([0.3, "off"]);
 		expect(catalog.thinking.qualityBonus.max).toBe(14);

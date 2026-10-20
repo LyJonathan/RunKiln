@@ -79,6 +79,33 @@ describe("models.yaml", () => {
 		expect(cli.thinkingLevel).toBe("off");
 	});
 
+	it("keeps glm-5-3 and ornith-1-5-122b manual only: no role, not in failover, still picked by --model", async () => {
+		for (const id of ["glm-5-3", "ornith-1-5-122b"]) {
+			expect(catalog.models.find((model) => model.id === id)?.roles).toEqual([]);
+			expect(catalog.defaults.fallback).not.toContain(id);
+		}
+		expect(Object.values(catalog.defaults)).not.toContain("glm-5-3");
+		expect(Object.values(catalog.defaults)).not.toContain("ornith-1-5-122b");
+		expect(catalog.models.find((model) => model.id === "glm-5-3")?.reasoningEfforts).toEqual(["low", "high", "max"]);
+		expect(catalog.models.find((model) => model.id === "ornith-1-5-122b")).toMatchObject({
+			reasoningEffort: "none",
+			thinkingField: "reasoning",
+		});
+		const runtime = await ModelRuntime.create({
+			catalog,
+			runInfraConfig: { baseUrl: "https://api.runinfra.ai/v1", apiKey: "ri_test" },
+			offline: true,
+			catalogCachePath: false,
+		});
+		const glm = resolveCliModel({ cliModel: "glm-5-3:max", modelRuntime: runtime });
+		expect(glm.model?.id).toBe("glm-5-3");
+		expect(glm.thinkingLevel).toBe("max");
+		expect(resolveCliModel({ cliModel: "ornith-1-5-122b", modelRuntime: runtime }).model?.input).toEqual([
+			"text",
+			"image",
+		]);
+	});
+
 	it("rejects an alias that is also a model or listed twice", () => {
 		expect(() => parseModelsCatalog("models:\n  - id: a\n    aliases: [b]\n  - id: b\n", "models.yaml")).toThrow(
 			/both a model and an alias/,

@@ -32,6 +32,8 @@ const repo = join(here, "../../../..");
 const fixture = (name: string) => JSON.parse(readFileSync(join(here, "fixtures", name), "utf8")) as unknown;
 /** Recorded 2026-10-16 from GET https://api.runinfra.ai/v1/models. */
 const RECORDED = fixture("runinfra-models-2026-10-17.json");
+/** Recorded 2026-10-20 from GET https://api.runinfra.ai/v1/models (glm-5-3 and ornith-1-5-122b added). */
+const RECORDED_1020 = fixture("runinfra-models-2026-10-20.json");
 /** The same body with ornith-1-5-35b gone and a new model (kimi-k3-flash) added. */
 const NEW_AND_GONE = fixture("runinfra-models-new-and-gone.json");
 const MODELS_YAML = readFileSync(join(repo, "models.yaml"), "utf8");
@@ -70,7 +72,7 @@ describe("recorded /v1/models", () => {
 		const catalog = parseModelsCatalog(MODELS_YAML, "models.yaml");
 		// The old DeepSeek id is an alias of 1017: the runtime drops it from the live list before merging.
 		expect(catalog.aliases).toEqual({ "deepseek-v4-1-flash": "deepseek-v4-1-flash-1017" });
-		const live = parseLiveModels(RECORDED).filter((entry) => !catalog.aliases?.[entry.id]);
+		const live = parseLiveModels(RECORDED_1020).filter((entry) => !catalog.aliases?.[entry.id]);
 		const merged = mergeLiveCatalog(catalog.chatModels, live, BASE_URL);
 		expect(merged.added).toEqual([]);
 		expect(merged.missing).toEqual([]);
@@ -86,6 +88,44 @@ describe("recorded /v1/models", () => {
 			BASE_URL,
 		);
 		expect(lowCap.models[0].maxTokens).toBe(8192);
+	});
+
+	it("matches the 2026-10-20 prices and limits of the manual-only glm-5-3 and ornith-1-5-122b", () => {
+		const catalog = parseModelsCatalog(MODELS_YAML, "models.yaml");
+		const live = parseLiveModels(RECORDED_1020);
+		expect(live.find((entry) => entry.id === "glm-5-3")).toMatchObject({
+			contextWindow: 1048576,
+			priceIn: 1.3,
+			priceOut: 4.2,
+			priceCachedIn: 0.13,
+			images: false,
+			reasoningEfforts: ["low", "high", "max"],
+			toolCalling: true,
+		});
+		expect(live.find((entry) => entry.id === "ornith-1-5-122b")).toMatchObject({
+			contextWindow: 262144,
+			maxOutputTokens: 262144,
+			priceIn: 0.2,
+			priceOut: 0.8,
+			priceCachedIn: 0.02,
+			images: true,
+			reasoningEfforts: [],
+			toolCalling: true,
+		});
+		const merged = mergeLiveCatalog(catalog.chatModels, live, BASE_URL);
+		expect(merged.models.find((model) => model.id === "glm-5-3")).toMatchObject({
+			input: ["text"],
+			cost: { input: 1.3, output: 4.2, cacheRead: 0.13, cacheWrite: 0 },
+			reasoning: true,
+			reasoningEffort: "high",
+		});
+		expect(merged.models.find((model) => model.id === "ornith-1-5-122b")).toMatchObject({
+			input: ["text", "image"],
+			cost: { input: 0.2, output: 0.8, cacheRead: 0.02, cacheWrite: 0 },
+			contextWindow: 262144,
+			reasoning: false,
+			reasoningEffort: "none",
+		});
 	});
 
 	it("adds new models and drops gone ones", () => {
@@ -309,6 +349,29 @@ describe("auto routing with new and gone models", () => {
 		});
 	}
 
+	it("never auto-routes to the manual-only glm-5-3 and ornith-1-5-122b", async () => {
+		const models = await liveModels(RECORDED_1020);
+		const ids = models.map((model) => model.id);
+		expect(ids).toContain("glm-5-3");
+		expect(ids).toContain("ornith-1-5-122b");
+		for (const difficulty of [0.1, 0.4, 0.7, 0.95]) {
+			for (const mode of ["low", "medium", "high"] as const) {
+				for (const hasImages of [false, true]) {
+					const decision = await router(models, difficulty).route({
+						signals: signals({ hasImages }),
+						role: "code",
+						toolsActive: true,
+						mode,
+					});
+					expect(["glm-5-3", "ornith-1-5-122b"]).not.toContain(decision.model.id);
+					const candidates = decision.selection?.candidates.map((row) => row.model) ?? [];
+					expect(candidates).not.toContain("glm-5-3");
+					expect(candidates).not.toContain("ornith-1-5-122b");
+				}
+			}
+		}
+	});
+
 	it("routes an image turn to a model the live catalog lists with image input", async () => {
 		const models = await liveModels(RECORDED);
 		const vision = models.filter((model) => model.input.includes("image")).map((model) => model.id);
@@ -458,8 +521,10 @@ describe("/models and /status", () => {
 		expect(rows.map((row) => row.id)).toEqual([
 			"glm-5-3-flash",
 			"deepseek-v4-1-flash-1017",
+			"glm-5-3",
 			"qwen3-8-27b",
 			"ornith-1-5-35b",
+			"ornith-1-5-122b",
 			"nemotron-3-5-lightning-30b",
 			"kimi-k3-flash",
 		]);

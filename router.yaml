@@ -642,3 +642,8 @@ models:
   # No cache hits and always thinks (models.yaml notes): keep it out of auto until benched.
   nemotron-3-5-lightning-30b:
     route: false
+  # Manual only (2026-10-20): picked with /model or config, never by auto routing or failover.
+  glm-5-3:
+    route: false
+  ornith-1-5-122b:
+    route: false
