@@ -1,6 +1,6 @@
 {
 	"name": "@runkiln/coding-agent",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "RunKiln: fast coding agent CLI for RunInfra",
 	"type": "module",
 	"runkilnConfig": {
@@ -35,9 +35,9 @@
 		"test": "vitest --run"
 	},
 	"dependencies": {
-		"@runkiln/agent-core": "0.1.1",
-		"@runkiln/ai": "0.1.1",
-		"@runkiln/tui": "0.1.1",
+		"@runkiln/agent-core": "0.1.2",
+		"@runkiln/ai": "0.1.2",
+		"@runkiln/tui": "0.1.2",
 		"@silvia-odwyer/photon-node": "0.3.4",
 		"@vscode/tree-sitter-wasm": "0.3.1",
 		"brace-expansion": "5.0.12",

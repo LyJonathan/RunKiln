@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.1.2]
+
 ### Added
 
 - `glm-5-3` (GLM 5.3): $1.30 in, $4.20 out per M tokens, cached input $0.13, 1M context, text only, thinking low/high/max (`high` when nobody picks a level). Manual only: pick it with `/model` or `--model glm-5-3`; auto routing and failover never use it.

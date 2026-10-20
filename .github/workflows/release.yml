@@ -2,7 +2,7 @@ name: Release
 
 # Push a tag like v0.1.0 (matching every package's version) to publish all four
 # @runkiln packages to npm. Needs the NPM_TOKEN repository secret.
-# No --provenance: npm only accepts it from public repos. Add it back if the repo goes public.
+# Publishes with --provenance (the repo is public).
 on:
   push:
     tags: ["v*"]
@@ -28,7 +28,7 @@ jobs:
       - run: npm run check
       - run: npm run test
       - name: Publish to npm
-        run: npm publish --workspaces --access public
+        run: npm publish --workspaces --access public --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Create the GitHub release
