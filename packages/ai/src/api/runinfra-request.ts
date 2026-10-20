@@ -141,6 +141,52 @@ export function fitRunInfraRequestSize(
 }
 
 // ---------------------------------------------------------------------------------------------
+// Image count guard (hosted inference: at most 8 images per request, history included)
+// ---------------------------------------------------------------------------------------------
+
+/** RunInfra hosted inference rejects a request with more images than this (400), across all messages. */
+export const RUNINFRA_MAX_IMAGES_PER_REQUEST = 8;
+
+const IMAGE_OMITTED_TEXT = "[older image omitted: RunInfra accepts at most 8 images per request]";
+
+function isImagePart(part: unknown): boolean {
+	return !!part && typeof part === "object" && (part as { type?: unknown }).type === "image_url";
+}
+
+/**
+ * Keeps at most `maxImages` images in a request: the newest stay, older ones become a short text
+ * placeholder so the model knows an image was there. Mutates `params` in place; returns how many
+ * images were dropped. Dropping changes earlier messages, so the prompt cache misses once.
+ */
+export function capRunInfraImages(
+	params: { messages: WireMessage[] },
+	maxImages: number = RUNINFRA_MAX_IMAGES_PER_REQUEST,
+): number {
+	let total = 0;
+	for (const message of params.messages) {
+		if (Array.isArray(message.content)) total += message.content.filter(isImagePart).length;
+	}
+	let toDrop = total - Math.max(0, maxImages);
+	if (toDrop <= 0) return 0;
+	const dropped = toDrop;
+	for (const message of params.messages) {
+		if (toDrop <= 0) break;
+		if (!Array.isArray(message.content)) continue;
+		const content: unknown[] = [];
+		for (const part of message.content) {
+			if (toDrop > 0 && isImagePart(part)) {
+				toDrop--;
+				content.push({ type: "text", text: IMAGE_OMITTED_TEXT });
+			} else {
+				content.push(part);
+			}
+		}
+		message.content = content;
+	}
+	return dropped;
+}
+
+// ---------------------------------------------------------------------------------------------
 // Client-side pacing (x-ratelimit-* headers, catalog max_concurrent_requests_per_api_key)
 // ---------------------------------------------------------------------------------------------
 

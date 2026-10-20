@@ -54,7 +54,13 @@ import {
 	resolveJsonSchemaStrictSampling,
 } from "./constrained-sampling.ts";
 import { runInfraSessionHeaders } from "./runinfra-headers.ts";
-import { fitRunInfraRequestSize, runInfraGateKey, runInfraMaxTokens, runInfraRequestGate } from "./runinfra-request.ts";
+import {
+	capRunInfraImages,
+	fitRunInfraRequestSize,
+	runInfraGateKey,
+	runInfraMaxTokens,
+	runInfraRequestGate,
+} from "./runinfra-request.ts";
 import { buildBaseOptions, resolveSamplingParams } from "./simple-options.ts";
 import { transformMessages } from "./transform-messages.ts";
 
@@ -339,6 +345,16 @@ export const stream: StreamFunction<"openai-completions", OpenAICompletionsOptio
 			const nextParams = await options?.onPayload?.(params, model);
 			if (nextParams !== undefined) {
 				params = nextParams as OpenAI.Chat.Completions.ChatCompletionCreateParamsStreaming;
+			}
+			// RunInfra hosted inference takes at most 8 images per request (history included): keep the newest.
+			if (model.provider === "runinfra") {
+				const droppedImages = capRunInfraImages(params as unknown as Parameters<typeof capRunInfraImages>[0]);
+				if (droppedImages > 0) {
+					output.diagnostics = [
+						...(output.diagnostics ?? []),
+						{ type: "images_dropped", timestamp: Date.now(), details: { droppedImages } },
+					];
+				}
 			}
 			// Trim oldest tool output before RunInfra would answer 413 (catalog max_request_bytes).
 			const fit = fitRunInfraRequestSize(
