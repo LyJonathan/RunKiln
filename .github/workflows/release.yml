@@ -1,0 +1,58 @@
+name: Release
+
+# Push a tag like v0.1.0 (matching every package's version) to publish all four
+# @runkiln packages to npm. Needs the NPM_TOKEN repository secret.
+# No --provenance: npm only accepts it from public repos. Add it back if the repo goes public.
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.19
+          cache: npm
+          registry-url: https://registry.npmjs.org
+      - run: npm ci
+      - name: Check the tag matches the package versions
+        run: node scripts/check-release-version.mjs "${GITHUB_REF_NAME}"
+      - run: npm run build
+      - run: npm run check
+      - run: npm run test
+      - name: Publish to npm
+        run: npm publish --workspaces --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Create the GitHub release
+        run: gh release create "${GITHUB_REF_NAME}" --generate-notes
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+  # Standalone executables, attached to the release the publish job created. Built on macOS so the
+  # darwin binaries can be re-signed ad hoc with codesign; the Linux and Windows ones build from any host.
+  binaries:
+    needs: publish
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.19
+          cache: npm
+      - run: npm ci
+      - name: Build the standalone executables
+        run: npm run build:binaries
+      - name: Smoke-test the darwin-arm64 executable
+        run: ./dist/binaries/runkiln-darwin-arm64 --version
+      - name: Attach them to the GitHub release
+        run: gh release upload "${GITHUB_REF_NAME}" dist/binaries/* --clobber
+        env:
+          GH_TOKEN: ${{ github.token }}

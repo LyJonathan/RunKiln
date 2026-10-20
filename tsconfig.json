@@ -1,0 +1,20 @@
+{
+	"extends": "./tsconfig.base.json",
+	"compilerOptions": {
+		"noEmit": true,
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+		"paths": {
+			"@runkiln/ai": ["./packages/ai/src/index.ts"],
+			"@runkiln/ai/*": ["./packages/ai/src/*.ts", "./packages/ai/src/providers/*.ts"],
+			"@runkiln/agent-core": ["./packages/agent/src/index.ts"],
+			"@runkiln/coding-agent": ["./packages/coding-agent/src/index.ts"],
+			"@runkiln/coding-agent/*": ["./packages/coding-agent/src/*"],
+			"@runkiln/tui": ["./packages/tui/src/index.ts"],
+			"@runkiln/tui/*": ["./packages/tui/src/*"],
+			"typebox": ["./node_modules/typebox"]
+		}
+	},
+	"include": ["packages/*/src/**/*", "packages/*/test/**/*"],
+	"exclude": ["**/dist/**"]
+}

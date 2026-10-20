@@ -1,0 +1,84 @@
+# RunKiln model catalog (RunInfra only).
+# Source: RunInfra GET /v1/models (2026-10-13, new models 2026-10-17) plus our probes (efforts, tools, cache, TTFT).
+# No URLs or keys here: provider endpoint + key live in local config (see Security note).
+# Prices USD per 1M tokens.
+provider: runinfra
+
+defaults:
+  code: glm-5-3-flash
+  chat: deepseek-v4-1-flash-1017
+  title: ornith-1-5-35b      # role default only; session titles use the choreModel setting unless models.title is set
+  fallback: [glm-5-3-flash, deepseek-v4-1-flash-1017, qwen3-8-27b, ornith-1-5-35b]
+
+session:
+  header: x-session-id        # one stable id per session; affinity idle TTL 900 s
+  subagent_header: x-parent-session-id
+  stick_to_model: true        # switching models drops the cache
+
+models:
+  - id: glm-5-3-flash
+    name: GLM 5.3 Flash
+    roles: [code, vision]
+    price: { in: 0.11, out: 0.45, cached_in: 0.03 }
+    context: 1048576
+    images: true
+    reasoning_efforts: [low, high, max]
+    api_default_effort: max     # too slow for normal turns
+    harness_effort: low
+    thinking_field: null        # at low effort no thinking seen
+    bench: { ttft_s: 0.9, tok_s: 180, cache_hit: 0.98 }
+
+  # The default DeepSeek since 2026-10-17: a refresh of deepseek-v4-1-flash (0.14 / 0.58 / 0.03, text only) that passed
+  # as much or more on the full suite, the mini-bench and the live slice, with cached input at $0.01 and image input.
+  # The old id is an alias: settings, --model and saved sessions that name it get this model.
+  - id: deepseek-v4-1-flash-1017
+    name: DeepSeek V4.1 Flash 1017
+    aliases: [deepseek-v4-1-flash]
+    roles: [chat, write, fallback]
+    price: { in: 0.15, out: 0.60, cached_in: 0.01 }
+    context: 1048576
+    images: true
+    reasoning_efforts: [none, low, high, xhigh, max]   # API list; minimal and medium are accepted too
+    api_default_effort: high
+    harness_effort: none
+    thinking_field: null
+    bench: { ttft_s: 0.47, cache_block: 128, note: two of five short calls took 3-4 s to the first token }
+
+  - id: qwen3-8-27b
+    name: Qwen3.8 27B
+    roles: [fallback]
+    price: { in: 0.10, out: 0.40, cached_in: 0.01 }
+    context: 262144
+    images: true
+    reasoning_efforts: [none, low, medium, xhigh]   # API list; high and max are accepted too, minimal is a 400
+    api_default_effort: xhigh   # burned a 300-token cap thinking in 1 of 3 runs
+    harness_effort: none        # 2026-10-17 probe: none stops thinking, every other level thinks
+    thinking_field: reasoning_content
+    bench: { ttft_s: 0.43, tok_s: 165, cache_hit: 0.99, cache_block: 64, note: tools work }
+    max_concurrent: 12          # lowest limit of the six
+
+  - id: ornith-1-5-35b
+    name: Ornith 1.5 35B
+    roles: [title, fast, fallback]
+    price: { in: 0.10, out: 0.40, cached_in: 0.01 }
+    context: 262144
+    images: true
+    reasoning_efforts: []       # API lists none, but "none" works and stops thinking; every other value still thinks
+    api_default_effort: null    # thinks by default
+    harness_effort: none
+    thinking_field: reasoning_content
+    bench: { ttft_s: 0.33, tok_s: 375, cache_hit: 0.99, cache_block: 64, tokens_debounce_prompt: 116, note: tools work }
+    max_concurrent: 48
+
+  - id: nemotron-3-5-lightning-30b
+    name: Nemotron 3.5 Lightning 30B
+    roles: []                   # off by default: no cache hits (2026-10-17: 0 cached on every repeat), thinks unless none
+    price: { in: 0.05, out: 0.15, cached_in: 0.01 }
+    context: 262144
+    images: false
+    reasoning_efforts: [none]   # every other value is accepted but thinks
+    api_default_effort: null
+    harness_effort: none
+    thinking_field: reasoning   # still emitted at default
+    bench: { ttft_s: 0.34, tok_s: 525-575, cache_hit: 0.0, note: tools work }
+    max_concurrent: 24

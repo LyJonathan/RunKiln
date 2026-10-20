@@ -1,0 +1,17 @@
+{
+	"extends": "../../tsconfig.base.json",
+	"compilerOptions": {
+		"outDir": "./dist",
+		"paths": {
+			"@runkiln/agent-core": ["../agent/dist/index.d.ts"],
+			"@runkiln/agent-core/*": ["../agent/dist/*.d.ts"],
+			"@runkiln/ai": ["../ai/dist/index.d.ts"],
+			"@runkiln/ai/*": ["../ai/dist/*.d.ts", "../ai/dist/providers/*.d.ts"],
+			"@runkiln/tui": ["../tui/dist/index.d.ts"],
+			"@runkiln/tui/*": ["../tui/dist/*.d.ts", "../tui/dist/components/*.d.ts"]
+		},
+		"rootDir": "./src"
+	},
+	"include": ["src/**/*.ts", "src/**/*.d.ts"],
+	"exclude": ["node_modules", "dist", "src/experimental"]
+}

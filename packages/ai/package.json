@@ -1,0 +1,80 @@
+{
+	"name": "@runkiln/ai",
+	"version": "0.1.0",
+	"description": "RunInfra-only LLM API for RunKiln",
+	"type": "module",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"sideEffects": [
+		"./dist/compat.js"
+	],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		},
+		"./models": {
+			"types": "./dist/models.d.ts",
+			"import": "./dist/models.js"
+		},
+		"./compat": {
+			"types": "./dist/compat.d.ts",
+			"import": "./dist/compat.js"
+		},
+		"./providers/*": {
+			"types": "./dist/providers/*.d.ts",
+			"import": "./dist/providers/*.js"
+		},
+		"./api/*": {
+			"types": "./dist/api/*.d.ts",
+			"import": "./dist/api/*.js"
+		},
+		"./utils/*": {
+			"types": "./dist/utils/*.d.ts",
+			"import": "./dist/utils/*.js"
+		}
+	},
+	"files": [
+		"dist",
+		"!dist/**/*.map",
+		"README.md",
+		"LICENSE"
+	],
+	"scripts": {
+		"clean": "shx rm -rf dist",
+		"build": "tsc -p tsconfig.build.json",
+		"test": "vitest --run --passWithNoTests"
+	},
+	"dependencies": {
+		"openai": "7.19.0",
+		"partial-json": "0.1.7",
+		"typebox": "1.3.27"
+	},
+	"keywords": [
+		"ai",
+		"llm",
+		"runinfra",
+		"openai-compatible"
+	],
+	"author": "Jonathan Ly",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/LyJonathan/RunKiln.git",
+		"directory": "packages/ai"
+	},
+	"engines": {
+		"node": ">=22.19.0"
+	},
+	"devDependencies": {
+		"@types/node": "22.19.19",
+		"vitest": "4.1.11"
+	},
+	"homepage": "https://github.com/LyJonathan/RunKiln/tree/main/packages/ai#readme",
+	"bugs": {
+		"url": "https://github.com/LyJonathan/RunKiln/issues"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}

@@ -1,0 +1,1271 @@
+{
+	"manual@12": [
+		"\u001b[38;2;126;136;142m~/code/Ru\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m",
+		"\u001b[38;2;126;136;142m$0.0024 -\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"manual@24": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m \u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-v4-1-flash -\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"manual@40": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m              deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"manual@60": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m                                  deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"manual@72": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m       deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"manual@80": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m               deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"manual@100": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                 \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                   deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"manual@120": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                       deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"manual@160": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                               deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"manual@220": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                                                                                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                                                                                           deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"auto-route@12": [
+		"\u001b[38;2;126;136;142m~/code/Ru\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m",
+		"\u001b[38;2;126;136;142m$0.0024 -\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mauto:medi\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"auto-route@24": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m \u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mauto:medium → deepsee\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"auto-route@40": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142mauto:medium → deepseek-v4-1-flash - h\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"auto-route@60": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142mauto:medium → deepseek-v4-1-flash - high - algo d0.75 ↑1 \u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"auto-route@72": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m      auto:medium → deepseek-v4-1-flash - high - algo d0.75 ↑1 follow-up\u001b[39m"
+	],
+	"auto-route@80": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m              auto:medium → deepseek-v4-1-flash - high - algo d0.75 ↑1 follow-up\u001b[39m"
+	],
+	"auto-route@100": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                 \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m                                  auto:medium → deepseek-v4-1-flash - high - algo d0.75 ↑1 follow-up\u001b[39m"
+	],
+	"auto-route@120": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m               auto:medium → deepseek-v4-1-flash - high - algo d0.75 ↑1 follow-up\u001b[39m"
+	],
+	"auto-route@160": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                       auto:medium → deepseek-v4-1-flash - high - algo d0.75 ↑1 follow-up\u001b[39m"
+	],
+	"auto-route@220": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                                                                                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                                                   auto:medium → deepseek-v4-1-flash - high - algo d0.75 ↑1 follow-up\u001b[39m"
+	],
+	"auto-route-pending@12": [
+		"\u001b[38;2;126;136;142m~/code/Ru\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m",
+		"\u001b[38;2;126;136;142m$0.0024 -\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mauto:medi\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"auto-route-pending@24": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m \u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mauto:medium → deepsee\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"auto-route-pending@40": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142mauto:medium → deepseek-v4-1-flash (ro\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"auto-route-pending@60": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m  auto:medium → deepseek-v4-1-flash (routes on next message)\u001b[39m"
+	],
+	"auto-route-pending@72": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m              auto:medium → deepseek-v4-1-flash (routes on next message)\u001b[39m"
+	],
+	"auto-route-pending@80": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m                      auto:medium → deepseek-v4-1-flash (routes on next message)\u001b[39m"
+	],
+	"auto-route-pending@100": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                 \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m   auto:medium → deepseek-v4-1-flash (routes on next message)\u001b[39m"
+	],
+	"auto-route-pending@120": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                       auto:medium → deepseek-v4-1-flash (routes on next message)\u001b[39m"
+	],
+	"auto-route-pending@160": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                               auto:medium → deepseek-v4-1-flash (routes on next message)\u001b[39m"
+	],
+	"auto-route-pending@220": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                                                                                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                                                           auto:medium → deepseek-v4-1-flash (routes on next message)\u001b[39m"
+	],
+	"auto-route-error@12": [
+		"\u001b[38;2;126;136;142m~/code/Ru\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m",
+		"\u001b[38;2;126;136;142m$0.0024 -\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mauto:medi\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"auto-route-error@24": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m \u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mauto:medium! → deepse\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"auto-route-error@40": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142mauto:medium! → deepseek-v4-1-flash - \u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"auto-route-error@60": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142mauto:medium! → deepseek-v4-1-flash - high - algo d0.75 ↑1\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"auto-route-error@72": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m     auto:medium! → deepseek-v4-1-flash - high - algo d0.75 ↑1 follow-up\u001b[39m"
+	],
+	"auto-route-error@80": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m             auto:medium! → deepseek-v4-1-flash - high - algo d0.75 ↑1 follow-up\u001b[39m"
+	],
+	"auto-route-error@100": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                 \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m                                 auto:medium! → deepseek-v4-1-flash - high - algo d0.75 ↑1 follow-up\u001b[39m"
+	],
+	"auto-route-error@120": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m              auto:medium! → deepseek-v4-1-flash - high - algo d0.75 ↑1 follow-up\u001b[39m"
+	],
+	"auto-route-error@160": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                      auto:medium! → deepseek-v4-1-flash - high - algo d0.75 ↑1 follow-up\u001b[39m"
+	],
+	"auto-route-error@220": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                                                                                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                                                  auto:medium! → deepseek-v4-1-flash - high - algo d0.75 ↑1 follow-up\u001b[39m"
+	],
+	"auto-pinned-thinking@12": [
+		"\u001b[38;2;126;136;142m~/code/Ru\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m",
+		"\u001b[38;2;126;136;142m$0.0024 -\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mauto:medi\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"auto-pinned-thinking@24": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m \u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mauto:medium → deepsee\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"auto-pinned-thinking@40": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142mauto:medium → deepseek-v4-1-flash - h\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"auto-pinned-thinking@60": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142mauto:medium → deepseek-v4-1-flash - high (pinned) - algo \u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"auto-pinned-thinking@72": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142mauto:medium → deepseek-v4-1-flash - high (pinned) - algo d0.75 ↑1 fol\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"auto-pinned-thinking@80": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m     auto:medium → deepseek-v4-1-flash - high (pinned) - algo d0.75 ↑1 follow-up\u001b[39m"
+	],
+	"auto-pinned-thinking@100": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                 \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m                         auto:medium → deepseek-v4-1-flash - high (pinned) - algo d0.75 ↑1 follow-up\u001b[39m"
+	],
+	"auto-pinned-thinking@120": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m      auto:medium → deepseek-v4-1-flash - high (pinned) - algo d0.75 ↑1 follow-up\u001b[39m"
+	],
+	"auto-pinned-thinking@160": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                              auto:medium → deepseek-v4-1-flash - high (pinned) - algo d0.75 ↑1 follow-up\u001b[39m"
+	],
+	"auto-pinned-thinking@220": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                                                                                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                                          auto:medium → deepseek-v4-1-flash - high (pinned) - algo d0.75 ↑1 follow-up\u001b[39m"
+	],
+	"allow-all@12": [
+		"\u001b[38;2;126;136;142m~/code/Ru\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m",
+		"\u001b[38;2;126;136;142m$0.0024 -\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mauto:medi\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"allow-all@24": [
+		"\u001b[38;2;126;136;142m~/code/\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m  \u001b[38;2;205;154;34m▸▸\u001b[39m \u001b[38;2;205;154;34mallow all\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m \u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mauto:medium → deepsee\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"allow-all@40": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m       \u001b[38;2;205;154;34m▸▸\u001b[39m \u001b[38;2;205;154;34mallow all\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142mauto:medium → deepseek-v4-1-flash - h\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"allow-all@60": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                           \u001b[38;2;205;154;34m▸▸\u001b[39m \u001b[38;2;205;154;34mallow all\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142mauto:medium → deepseek-v4-1-flash - high - algo d0.75 ↑1 \u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"allow-all@72": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                       \u001b[38;2;205;154;34m▸▸\u001b[39m \u001b[38;2;205;154;34mallow all\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m      auto:medium → deepseek-v4-1-flash - high - algo d0.75 ↑1 follow-up\u001b[39m"
+	],
+	"allow-all@80": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                               \u001b[38;2;205;154;34m▸▸\u001b[39m \u001b[38;2;205;154;34mallow all\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m   (runinfra) auto:medium → deepseek-v4-1-flash - high - algo d0.75 ↑1 follow-up\u001b[39m"
+	],
+	"allow-all@100": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                   \u001b[38;2;205;154;34m▸▸\u001b[39m \u001b[38;2;205;154;34mallow all\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m                       (runinfra) auto:medium → deepseek-v4-1-flash - high - algo d0.75 ↑1 follow-up\u001b[39m"
+	],
+	"allow-all@120": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                       \u001b[38;2;205;154;34m▸▸\u001b[39m \u001b[38;2;205;154;34mallow all\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m    (runinfra) auto:medium → deepseek-v4-1-flash - high - algo d0.75 ↑1 follow-up\u001b[39m"
+	],
+	"allow-all@160": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                               \u001b[38;2;205;154;34m▸▸\u001b[39m \u001b[38;2;205;154;34mallow all\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                            (runinfra) auto:medium → deepseek-v4-1-flash - high - algo d0.75 ↑1 follow-up\u001b[39m"
+	],
+	"allow-all@220": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                                                                                           \u001b[38;2;205;154;34m▸▸\u001b[39m \u001b[38;2;205;154;34mallow all\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                                        (runinfra) auto:medium → deepseek-v4-1-flash - high - algo d0.75 ↑1 follow-up\u001b[39m"
+	],
+	"ask@12": [
+		"\u001b[38;2;126;136;142m~/code/Ru\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m",
+		"\u001b[38;2;126;136;142m$0.0024 -\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"ask@24": [
+		"\u001b[38;2;126;136;142m~/code/Run\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m  \u001b[38;2;157;165;169m▸\u001b[39m \u001b[38;2;157;165;169mask all\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m \u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-v4-1-flash -\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"ask@40": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m          \u001b[38;2;157;165;169m▸\u001b[39m \u001b[38;2;157;165;169mask all\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m              deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"ask@60": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                              \u001b[38;2;157;165;169m▸\u001b[39m \u001b[38;2;157;165;169mask all\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m                                  deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"ask@72": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                          \u001b[38;2;157;165;169m▸\u001b[39m \u001b[38;2;157;165;169mask all\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m       deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"ask@80": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                  \u001b[38;2;157;165;169m▸\u001b[39m \u001b[38;2;157;165;169mask all\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m               deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"ask@100": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                      \u001b[38;2;157;165;169m▸\u001b[39m \u001b[38;2;157;165;169mask all\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                   deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"ask@120": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                          \u001b[38;2;157;165;169m▸\u001b[39m \u001b[38;2;157;165;169mask all\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                       deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"ask@160": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                                  \u001b[38;2;157;165;169m▸\u001b[39m \u001b[38;2;157;165;169mask all\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                               deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"ask@220": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                                                                                              \u001b[38;2;157;165;169m▸\u001b[39m \u001b[38;2;157;165;169mask all\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                                                                                           deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"plan@12": [
+		"\u001b[38;2;126;136;142m~/code/Ru\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m",
+		"\u001b[38;2;126;136;142m$0.0024 -\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"plan@24": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m \u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-v4-1-flash -\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"plan@40": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (m\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m  \u001b[38;2;255;106;26m‖\u001b[39m \u001b[38;2;255;106;26mplan - read-only\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m              deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"plan@60": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                     \u001b[38;2;255;106;26m‖\u001b[39m \u001b[38;2;255;106;26mplan - read-only\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m                                  deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"plan@72": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                 \u001b[38;2;255;106;26m‖\u001b[39m \u001b[38;2;255;106;26mplan - read-only\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m       deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"plan@80": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                         \u001b[38;2;255;106;26m‖\u001b[39m \u001b[38;2;255;106;26mplan - read-only\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m               deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"plan@100": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                             \u001b[38;2;255;106;26m‖\u001b[39m \u001b[38;2;255;106;26mplan - read-only\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                   deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"plan@120": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                 \u001b[38;2;255;106;26m‖\u001b[39m \u001b[38;2;255;106;26mplan - read-only\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                       deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"plan@160": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                         \u001b[38;2;255;106;26m‖\u001b[39m \u001b[38;2;255;106;26mplan - read-only\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                               deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"plan@220": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                                                                                     \u001b[38;2;255;106;26m‖\u001b[39m \u001b[38;2;255;106;26mplan - read-only\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                                                                                           deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"auto-perm@12": [
+		"\u001b[38;2;126;136;142m~/code/Ru\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m",
+		"\u001b[38;2;126;136;142m$0.0024 -\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"auto-perm@24": [
+		"\u001b[38;2;126;136;142m~/code/RunKil\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m  \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mauto\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m \u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-v4-1-flash -\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"auto-perm@40": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mauto\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m              deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"auto-perm@60": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                 \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mauto\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m                                  deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"auto-perm@72": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mauto\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m       deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"auto-perm@80": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mauto\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m               deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"auto-perm@100": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mauto\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                   deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"auto-perm@120": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mauto\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                       deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"auto-perm@160": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mauto\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                               deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"auto-perm@220": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                                                                                                 \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mauto\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                                                                                           deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"two-providers@12": [
+		"\u001b[38;2;126;136;142m~/code/Ru\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m",
+		"\u001b[38;2;126;136;142m$0.0024 -\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"two-providers@24": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m \u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-v4-1-flash -\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"two-providers@40": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m   (runinfra) deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"two-providers@60": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m                       (runinfra) deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"two-providers@72": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m       deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"two-providers@80": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m    (runinfra) deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"two-providers@100": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                 \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                        (runinfra) deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"two-providers@120": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                            (runinfra) deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"two-providers@160": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                    (runinfra) deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"two-providers@220": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                                                                                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                                                                                (runinfra) deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"no-reasoning@12": [
+		"\u001b[38;2;126;136;142m~/code/Ru\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m",
+		"\u001b[38;2;126;136;142m$0.0024 -\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"no-reasoning@24": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m \u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142m     deepseek-v4-1-flash\u001b[39m"
+	],
+	"no-reasoning@40": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m                     deepseek-v4-1-flash\u001b[39m"
+	],
+	"no-reasoning@60": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m  deepseek-v4-1-flash\u001b[39m"
+	],
+	"no-reasoning@72": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m              deepseek-v4-1-flash\u001b[39m"
+	],
+	"no-reasoning@80": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                      deepseek-v4-1-flash\u001b[39m"
+	],
+	"no-reasoning@100": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                 \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                          deepseek-v4-1-flash\u001b[39m"
+	],
+	"no-reasoning@120": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                              deepseek-v4-1-flash\u001b[39m"
+	],
+	"no-reasoning@160": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                                      deepseek-v4-1-flash\u001b[39m"
+	],
+	"no-reasoning@220": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                                                                                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                                                                                                  deepseek-v4-1-flash\u001b[39m"
+	],
+	"thinking-off@12": [
+		"\u001b[38;2;126;136;142m~/code/Ru\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m",
+		"\u001b[38;2;126;136;142m$0.0024 -\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"thinking-off@24": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m \u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-v4-1-flash -\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"thinking-off@40": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m      deepseek-v4-1-flash - thinking off\u001b[39m"
+	],
+	"thinking-off@60": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m                          deepseek-v4-1-flash - thinking off\u001b[39m"
+	],
+	"thinking-off@72": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m                                      deepseek-v4-1-flash - thinking off\u001b[39m"
+	],
+	"thinking-off@80": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m       deepseek-v4-1-flash - thinking off\u001b[39m"
+	],
+	"thinking-off@100": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                 \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                           deepseek-v4-1-flash - thinking off\u001b[39m"
+	],
+	"thinking-off@120": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                               deepseek-v4-1-flash - thinking off\u001b[39m"
+	],
+	"thinking-off@160": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                       deepseek-v4-1-flash - thinking off\u001b[39m"
+	],
+	"thinking-off@220": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                                                                                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                                                                                   deepseek-v4-1-flash - thinking off\u001b[39m"
+	],
+	"no-model@12": [
+		"\u001b[38;2;126;136;142m~/code/Ru\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m",
+		"\u001b[38;2;126;136;142m$0.0024 -\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142m    no-model\u001b[39m"
+	],
+	"no-model@24": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m \u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142m                no-model\u001b[39m"
+	],
+	"no-model@40": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m                                no-model\u001b[39m"
+	],
+	"no-model@60": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m             no-model\u001b[39m"
+	],
+	"no-model@72": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                         no-model\u001b[39m"
+	],
+	"no-model@80": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                 no-model\u001b[39m"
+	],
+	"no-model@100": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                 \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                     no-model\u001b[39m"
+	],
+	"no-model@120": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                         no-model\u001b[39m"
+	],
+	"no-model@160": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                                                 no-model\u001b[39m"
+	],
+	"no-model@220": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                                                                                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                                                                                                             no-model\u001b[39m"
+	],
+	"no-branch@12": [
+		"\u001b[38;2;126;136;142m~/code/Ru\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m",
+		"\u001b[38;2;126;136;142m$0.0024 -\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"no-branch@24": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m \u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-v4-1-flash -\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"no-branch@40": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln\u001b[39m            \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m              deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"no-branch@60": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln\u001b[39m                                \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m                                  deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"no-branch@72": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln\u001b[39m                                            \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m       deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"no-branch@80": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln\u001b[39m                                                    \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m               deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"no-branch@100": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln\u001b[39m                                                                        \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                   deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"no-branch@120": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln\u001b[39m                                                                                            \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                       deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"no-branch@160": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln\u001b[39m                                                                                                                                    \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                               deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"no-branch@220": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln\u001b[39m                                                                                                                                                                                                \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                                                                                           deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"session-name@12": [
+		"\u001b[38;2;126;136;142m~/code/Ru\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m",
+		"\u001b[38;2;126;136;142m$0.0024 -\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"session-name@24": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m \u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-v4-1-flash -\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"session-name@40": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m  \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m              deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"session-name@60": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main) - parser fix\u001b[39m            \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m                                  deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"session-name@72": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main) - parser fix\u001b[39m                        \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m       deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"session-name@80": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main) - parser fix\u001b[39m                                \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m               deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"session-name@100": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main) - parser fix\u001b[39m                                                    \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                   deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"session-name@120": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main) - parser fix\u001b[39m                                                                        \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                       deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"session-name@160": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main) - parser fix\u001b[39m                                                                                                                \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                               deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"session-name@220": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main) - parser fix\u001b[39m                                                                                                                                                                            \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                                                                                           deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"outside-home@12": [
+		"\u001b[38;2;126;136;142m/srv/app/\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m",
+		"\u001b[38;2;126;136;142m$0.0024 -\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"outside-home@24": [
+		"\u001b[38;2;126;136;142m/srv/app/very/long/pa\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m \u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-v4-1-flash -\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"outside-home@40": [
+		"\u001b[38;2;126;136;142m/srv/app/very/long/pa\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m  \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m              deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"outside-home@60": [
+		"\u001b[38;2;126;136;142m/srv/app/very/long/path/to/the/project/re\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m  \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m                                  deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"outside-home@72": [
+		"\u001b[38;2;126;136;142m/srv/app/very/long/path/to/the/project/repository (main)\u001b[39m  \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m       deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"outside-home@80": [
+		"\u001b[38;2;126;136;142m/srv/app/very/long/path/to/the/project/repository (main)\u001b[39m          \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m               deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"outside-home@100": [
+		"\u001b[38;2;126;136;142m/srv/app/very/long/path/to/the/project/repository (main)\u001b[39m                              \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                   deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"outside-home@120": [
+		"\u001b[38;2;126;136;142m/srv/app/very/long/path/to/the/project/repository (main)\u001b[39m                                                  \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                       deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"outside-home@160": [
+		"\u001b[38;2;126;136;142m/srv/app/very/long/path/to/the/project/repository (main)\u001b[39m                                                                                          \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                               deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"outside-home@220": [
+		"\u001b[38;2;126;136;142m/srv/app/very/long/path/to/the/project/repository (main)\u001b[39m                                                                                                                                                      \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                                                                                           deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"statuses@12": [
+		"\u001b[38;2;126;136;142m~/code/Ru\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m",
+		"\u001b[38;2;126;136;142m$0.0024 -\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-\u001b[0m...\u001b[0m\u001b[39m",
+		"lint clea\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m"
+	],
+	"statuses@24": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m \u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-v4-1-flash -\u001b[0m...\u001b[0m\u001b[39m",
+		"lint clean 2 jobs (/j\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m"
+	],
+	"statuses@40": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m              deepseek-v4-1-flash - high\u001b[39m",
+		"lint clean 2 jobs (/jobs) z-ext ok"
+	],
+	"statuses@60": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m                                  deepseek-v4-1-flash - high\u001b[39m",
+		"lint clean 2 jobs (/jobs) z-ext ok"
+	],
+	"statuses@72": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m       deepseek-v4-1-flash - high\u001b[39m",
+		"lint clean 2 jobs (/jobs) z-ext ok"
+	],
+	"statuses@80": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m               deepseek-v4-1-flash - high\u001b[39m",
+		"lint clean 2 jobs (/jobs) z-ext ok"
+	],
+	"statuses@100": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                 \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                   deepseek-v4-1-flash - high\u001b[39m",
+		"lint clean 2 jobs (/jobs) z-ext ok"
+	],
+	"statuses@120": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                       deepseek-v4-1-flash - high\u001b[39m",
+		"lint clean 2 jobs (/jobs) z-ext ok"
+	],
+	"statuses@160": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                               deepseek-v4-1-flash - high\u001b[39m",
+		"lint clean 2 jobs (/jobs) z-ext ok"
+	],
+	"statuses@220": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                                                                                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                                                                                           deepseek-v4-1-flash - high\u001b[39m",
+		"lint clean 2 jobs (/jobs) z-ext ok"
+	],
+	"budget-ok@12": [
+		"\u001b[38;2;126;136;142m~/code/Ru\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m",
+		"\u001b[38;2;126;136;142m$0.0024/$\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"budget-ok@24": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024/$0.50 - 84% c\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-v4-1-flash -\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"budget-ok@40": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024/$0.50 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142m              deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"budget-ok@60": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024/$0.50 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m                                  deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"budget-ok@72": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024/$0.50 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m                                              deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"budget-ok@80": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024/$0.50 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m         deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"budget-ok@100": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                 \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024/$0.50 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                             deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"budget-ok@120": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024/$0.50 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                 deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"budget-ok@160": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024/$0.50 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                         deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"budget-ok@220": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                                                                                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024/$0.50 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                                                                                     deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"budget-warn@12": [
+		"\u001b[38;2;126;136;142m~/code/Ru\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m",
+		"\u001b[38;2;126;136;142m\u001b[38;2;205;154;34m$0.0024/$\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"budget-warn@24": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m",
+		"\u001b[38;2;126;136;142m\u001b[38;2;205;154;34m$0.0024/$0.50 - 84% c\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-v4-1-flash -\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"budget-warn@40": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m\u001b[38;2;205;154;34m$0.0024/$0.50 - 84% cached\u001b[39m\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142m              deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"budget-warn@60": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m\u001b[38;2;205;154;34m$0.0024/$0.50 - 84% cached\u001b[39m\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m                                  deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"budget-warn@72": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m\u001b[38;2;205;154;34m$0.0024/$0.50 - 84% cached\u001b[39m\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m                                              deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"budget-warn@80": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m\u001b[38;2;205;154;34m$0.0024/$0.50 - 84% cached\u001b[39m\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m         deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"budget-warn@100": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                 \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m\u001b[38;2;205;154;34m$0.0024/$0.50 - 84% cached\u001b[39m\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                             deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"budget-warn@120": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m\u001b[38;2;205;154;34m$0.0024/$0.50 - 84% cached\u001b[39m\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                 deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"budget-warn@160": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m\u001b[38;2;205;154;34m$0.0024/$0.50 - 84% cached\u001b[39m\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                         deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"budget-warn@220": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                                                                                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m\u001b[38;2;205;154;34m$0.0024/$0.50 - 84% cached\u001b[39m\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                                                                                     deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"budget-over@12": [
+		"\u001b[38;2;126;136;142m~/code/Ru\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m",
+		"\u001b[38;2;126;136;142m\u001b[38;2;234;127;129m$0.0024/$\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"budget-over@24": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m",
+		"\u001b[38;2;126;136;142m\u001b[38;2;234;127;129m$0.0024/$0.50 - 84% c\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-v4-1-flash -\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"budget-over@40": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m\u001b[38;2;234;127;129m$0.0024/$0.50 - 84% cached\u001b[39m\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142m              deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"budget-over@60": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m\u001b[38;2;234;127;129m$0.0024/$0.50 - 84% cached\u001b[39m\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m                                  deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"budget-over@72": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m\u001b[38;2;234;127;129m$0.0024/$0.50 - 84% cached\u001b[39m\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m                                              deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"budget-over@80": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m\u001b[38;2;234;127;129m$0.0024/$0.50 - 84% cached\u001b[39m\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m         deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"budget-over@100": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                 \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m\u001b[38;2;234;127;129m$0.0024/$0.50 - 84% cached\u001b[39m\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                             deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"budget-over@120": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m\u001b[38;2;234;127;129m$0.0024/$0.50 - 84% cached\u001b[39m\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                 deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"budget-over@160": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m\u001b[38;2;234;127;129m$0.0024/$0.50 - 84% cached\u001b[39m\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                         deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"budget-over@220": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                                                                                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m\u001b[38;2;234;127;129m$0.0024/$0.50 - 84% cached\u001b[39m\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                                                                                     deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"subscription@12": [
+		"\u001b[38;2;126;136;142m~/code/Ru\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m",
+		"\u001b[38;2;126;136;142m$0.0024 -\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"subscription@24": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached \u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-v4-1-flash -\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"subscription@40": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached (sub)\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142m              deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"subscription@60": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached (sub)\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m                                  deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"subscription@72": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached (sub)\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m                                              deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"subscription@80": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached (sub)\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m         deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"subscription@100": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                 \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached (sub)\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                             deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"subscription@120": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached (sub)\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                 deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"subscription@160": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached (sub)\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                         deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"subscription@220": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                                                                                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached (sub)\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                                                                                     deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"subscription-no-usage@12": [
+		"\u001b[38;2;126;136;142m~/code/Ru\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m",
+		"\u001b[38;2;126;136;142m$0.0000 (\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"subscription-no-usage@24": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0000 (sub)\u001b[38;2;126;136;142m - \u001b[39m4.3%/\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-v4-1-flash -\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"subscription-no-usage@40": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0000 (sub)\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m              deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"subscription-no-usage@60": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0000 (sub)\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m  deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"subscription-no-usage@72": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0000 (sub)\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m              deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"subscription-no-usage@80": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0000 (sub)\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                      deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"subscription-no-usage@100": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                 \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0000 (sub)\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                          deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"subscription-no-usage@120": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0000 (sub)\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                              deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"subscription-no-usage@160": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0000 (sub)\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                                      deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"subscription-no-usage@220": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                                                                                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0000 (sub)\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                                                                                                  deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"no-usage@12": [
+		"\u001b[38;2;126;136;142m~/code/Ru\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m",
+		"\u001b[38;2;126;136;142m4.3%/1.0M\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"no-usage@24": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m",
+		"\u001b[38;2;126;136;142m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-v4-1-flash -\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"no-usage@40": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m4.3%/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m              deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"no-usage@60": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                  deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"no-usage@72": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                              deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"no-usage@80": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                      deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"no-usage@100": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                 \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                          deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"no-usage@120": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                              deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"no-usage@160": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                                                      deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"no-usage@220": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                                                                                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m4.3%/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                                                                                                                  deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"context-unknown@12": [
+		"\u001b[38;2;126;136;142m~/code/Ru\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m",
+		"\u001b[38;2;126;136;142m$0.0024 -\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"context-unknown@24": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m \u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-v4-1-flash -\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"context-unknown@40": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m?/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m              deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"context-unknown@60": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m?/1.0M (auto)\u001b[39m",
+		"\u001b[38;2;126;136;142m                                  deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"context-unknown@72": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m?/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m          deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"context-unknown@80": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m?/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                  deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"context-unknown@100": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                 \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m?/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                      deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"context-unknown@120": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m?/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                          deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"context-unknown@160": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m?/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                                  deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"context-unknown@220": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                                                                                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m?/1.0M (auto)\u001b[39m\u001b[38;2;126;136;142m                                                                                                                                                              deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"context-warn@12": [
+		"\u001b[38;2;126;136;142m~/code/Ru\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m",
+		"\u001b[38;2;126;136;142m$0.0024 -\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"context-warn@24": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m \u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-v4-1-flash -\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"context-warn@40": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m\u001b[38;2;205;154;34m75.3%/1.0M (auto)\u001b[39m\u001b[39m",
+		"\u001b[38;2;126;136;142m              deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"context-warn@60": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m\u001b[38;2;205;154;34m75.3%/1.0M (auto)\u001b[39m\u001b[39m",
+		"\u001b[38;2;126;136;142m                                  deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"context-warn@72": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m\u001b[38;2;205;154;34m75.3%/1.0M (auto)\u001b[39m\u001b[39m\u001b[38;2;126;136;142m      deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"context-warn@80": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m\u001b[38;2;205;154;34m75.3%/1.0M (auto)\u001b[39m\u001b[39m\u001b[38;2;126;136;142m              deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"context-warn@100": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                 \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m\u001b[38;2;205;154;34m75.3%/1.0M (auto)\u001b[39m\u001b[39m\u001b[38;2;126;136;142m                                  deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"context-warn@120": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m\u001b[38;2;205;154;34m75.3%/1.0M (auto)\u001b[39m\u001b[39m\u001b[38;2;126;136;142m                                                      deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"context-warn@160": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m\u001b[38;2;205;154;34m75.3%/1.0M (auto)\u001b[39m\u001b[39m\u001b[38;2;126;136;142m                                                                                              deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"context-warn@220": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                                                                                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m\u001b[38;2;205;154;34m75.3%/1.0M (auto)\u001b[39m\u001b[39m\u001b[38;2;126;136;142m                                                                                                                                                          deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"context-error@12": [
+		"\u001b[38;2;126;136;142m~/code/Ru\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m",
+		"\u001b[38;2;126;136;142m$0.0024 -\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"context-error@24": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m \u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-v4-1-flash -\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"context-error@40": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m\u001b[38;2;234;127;129m95.5%/1.0M (auto)\u001b[39m\u001b[39m",
+		"\u001b[38;2;126;136;142m              deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"context-error@60": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m\u001b[38;2;234;127;129m95.5%/1.0M (auto)\u001b[39m\u001b[39m",
+		"\u001b[38;2;126;136;142m                                  deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"context-error@72": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m\u001b[38;2;234;127;129m95.5%/1.0M (auto)\u001b[39m\u001b[39m\u001b[38;2;126;136;142m      deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"context-error@80": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m\u001b[38;2;234;127;129m95.5%/1.0M (auto)\u001b[39m\u001b[39m\u001b[38;2;126;136;142m              deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"context-error@100": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                 \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m\u001b[38;2;234;127;129m95.5%/1.0M (auto)\u001b[39m\u001b[39m\u001b[38;2;126;136;142m                                  deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"context-error@120": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m\u001b[38;2;234;127;129m95.5%/1.0M (auto)\u001b[39m\u001b[39m\u001b[38;2;126;136;142m                                                      deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"context-error@160": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m\u001b[38;2;234;127;129m95.5%/1.0M (auto)\u001b[39m\u001b[39m\u001b[38;2;126;136;142m                                                                                              deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"context-error@220": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                                                                                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m\u001b[38;2;234;127;129m95.5%/1.0M (auto)\u001b[39m\u001b[39m\u001b[38;2;126;136;142m                                                                                                                                                          deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"no-autocompact@12": [
+		"\u001b[38;2;126;136;142m~/code/Ru\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m",
+		"\u001b[38;2;126;136;142m$0.0024 -\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"no-autocompact@24": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m \u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mdeepseek-v4-1-flash -\u001b[0m...\u001b[0m\u001b[39m"
+	],
+	"no-autocompact@40": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M\u001b[39m",
+		"\u001b[38;2;126;136;142m              deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"no-autocompact@60": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M\u001b[39m\u001b[38;2;126;136;142m  deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"no-autocompact@72": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M\u001b[39m\u001b[38;2;126;136;142m              deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"no-autocompact@80": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M\u001b[39m\u001b[38;2;126;136;142m                      deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"no-autocompact@100": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                 \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M\u001b[39m\u001b[38;2;126;136;142m                                          deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"no-autocompact@120": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                     \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M\u001b[39m\u001b[38;2;126;136;142m                                                              deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"no-autocompact@160": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                             \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M\u001b[39m\u001b[38;2;126;136;142m                                                                                                      deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"no-autocompact@220": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main)\u001b[39m                                                                                                                                                                                         \u001b[38;2;255;106;26m▸\u001b[39m \u001b[38;2;255;106;26mread & write\u001b[39m",
+		"\u001b[38;2;126;136;142m$0.0024 - 84% cached\u001b[38;2;126;136;142m - \u001b[39m4.3%/1.0M\u001b[39m\u001b[38;2;126;136;142m                                                                                                                                                                  deepseek-v4-1-flash - high\u001b[39m"
+	],
+	"everything@12": [
+		"\u001b[38;2;126;136;142m~/code/Ru\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m",
+		"\u001b[38;2;126;136;142m\u001b[38;2;205;154;34m$0.0024/$\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mauto:medi\u001b[0m...\u001b[0m\u001b[39m",
+		"job: npm \u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m"
+	],
+	"everything@24": [
+		"\u001b[38;2;126;136;142m~/code/\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m  \u001b[38;2;205;154;34m▸▸\u001b[39m \u001b[38;2;205;154;34mallow all\u001b[39m",
+		"\u001b[38;2;126;136;142m\u001b[38;2;205;154;34m$0.0024/$0.50 - 84% c\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mauto:medium → deepsee\u001b[0m...\u001b[0m\u001b[39m",
+		"job: npm test tests ✓\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m"
+	],
+	"everything@40": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main) -\u001b[0m\u001b[38;2;126;136;142m...\u001b[39m\u001b[0m  \u001b[38;2;205;154;34m▸▸\u001b[39m \u001b[38;2;205;154;34mallow all\u001b[39m",
+		"\u001b[38;2;126;136;142m\u001b[38;2;205;154;34m$0.0024/$0.50 - 84% cached\u001b[39m\u001b[38;2;126;136;142m - \u001b[39m\u001b[38;2;205;154;34m81.0%/1.\u001b[0m...\u001b[0m\u001b[39m",
+		"\u001b[38;2;126;136;142mauto:medium → deepseek-v4-1-flash - h\u001b[0m...\u001b[0m\u001b[39m",
+		"job: npm test tests ✓ 412"
+	],
+	"everything@60": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main) - big refactor\u001b[39m            \u001b[38;2;205;154;34m▸▸\u001b[39m \u001b[38;2;205;154;34mallow all\u001b[39m",
+		"\u001b[38;2;126;136;142m\u001b[38;2;205;154;34m$0.0024/$0.50 - 84% cached\u001b[39m\u001b[38;2;126;136;142m - \u001b[39m\u001b[38;2;205;154;34m81.0%/1.0M (auto)\u001b[39m\u001b[39m",
+		"\u001b[38;2;126;136;142mauto:medium → deepseek-v4-1-flash - high - algo d0.75 ↑1 \u001b[0m...\u001b[0m\u001b[39m",
+		"job: npm test tests ✓ 412"
+	],
+	"everything@72": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main) - big refactor\u001b[39m                        \u001b[38;2;205;154;34m▸▸\u001b[39m \u001b[38;2;205;154;34mallow all\u001b[39m",
+		"\u001b[38;2;126;136;142m\u001b[38;2;205;154;34m$0.0024/$0.50 - 84% cached\u001b[39m\u001b[38;2;126;136;142m - \u001b[39m\u001b[38;2;205;154;34m81.0%/1.0M (auto)\u001b[39m\u001b[39m",
+		"\u001b[38;2;126;136;142m      auto:medium → deepseek-v4-1-flash - high - algo d0.75 ↑1 follow-up\u001b[39m",
+		"job: npm test tests ✓ 412"
+	],
+	"everything@80": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main) - big refactor\u001b[39m                                \u001b[38;2;205;154;34m▸▸\u001b[39m \u001b[38;2;205;154;34mallow all\u001b[39m",
+		"\u001b[38;2;126;136;142m\u001b[38;2;205;154;34m$0.0024/$0.50 - 84% cached\u001b[39m\u001b[38;2;126;136;142m - \u001b[39m\u001b[38;2;205;154;34m81.0%/1.0M (auto)\u001b[39m\u001b[39m",
+		"\u001b[38;2;126;136;142m   (runinfra) auto:medium → deepseek-v4-1-flash - high - algo d0.75 ↑1 follow-up\u001b[39m",
+		"job: npm test tests ✓ 412"
+	],
+	"everything@100": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main) - big refactor\u001b[39m                                                    \u001b[38;2;205;154;34m▸▸\u001b[39m \u001b[38;2;205;154;34mallow all\u001b[39m",
+		"\u001b[38;2;126;136;142m\u001b[38;2;205;154;34m$0.0024/$0.50 - 84% cached\u001b[39m\u001b[38;2;126;136;142m - \u001b[39m\u001b[38;2;205;154;34m81.0%/1.0M (auto)\u001b[39m\u001b[39m",
+		"\u001b[38;2;126;136;142m                       (runinfra) auto:medium → deepseek-v4-1-flash - high - algo d0.75 ↑1 follow-up\u001b[39m",
+		"job: npm test tests ✓ 412"
+	],
+	"everything@120": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main) - big refactor\u001b[39m                                                                        \u001b[38;2;205;154;34m▸▸\u001b[39m \u001b[38;2;205;154;34mallow all\u001b[39m",
+		"\u001b[38;2;126;136;142m\u001b[38;2;205;154;34m$0.0024/$0.50 - 84% cached\u001b[39m\u001b[38;2;126;136;142m - \u001b[39m\u001b[38;2;205;154;34m81.0%/1.0M (auto)\u001b[39m\u001b[39m\u001b[38;2;126;136;142m        auto:medium → deepseek-v4-1-flash - high - algo d0.75 ↑1 follow-up\u001b[39m",
+		"job: npm test tests ✓ 412"
+	],
+	"everything@160": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main) - big refactor\u001b[39m                                                                                                                \u001b[38;2;205;154;34m▸▸\u001b[39m \u001b[38;2;205;154;34mallow all\u001b[39m",
+		"\u001b[38;2;126;136;142m\u001b[38;2;205;154;34m$0.0024/$0.50 - 84% cached\u001b[39m\u001b[38;2;126;136;142m - \u001b[39m\u001b[38;2;205;154;34m81.0%/1.0M (auto)\u001b[39m\u001b[39m\u001b[38;2;126;136;142m                                     (runinfra) auto:medium → deepseek-v4-1-flash - high - algo d0.75 ↑1 follow-up\u001b[39m",
+		"job: npm test tests ✓ 412"
+	],
+	"everything@220": [
+		"\u001b[38;2;126;136;142m~/code/RunKiln (main) - big refactor\u001b[39m                                                                                                                                                                            \u001b[38;2;205;154;34m▸▸\u001b[39m \u001b[38;2;205;154;34mallow all\u001b[39m",
+		"\u001b[38;2;126;136;142m\u001b[38;2;205;154;34m$0.0024/$0.50 - 84% cached\u001b[39m\u001b[38;2;126;136;142m - \u001b[39m\u001b[38;2;205;154;34m81.0%/1.0M (auto)\u001b[39m\u001b[39m\u001b[38;2;126;136;142m                                                                                                 (runinfra) auto:medium → deepseek-v4-1-flash - high - algo d0.75 ↑1 follow-up\u001b[39m",
+		"job: npm test tests ✓ 412"
+	]
+}

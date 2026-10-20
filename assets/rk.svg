@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 236 140" width="236" height="140" role="img" aria-labelledby="rk-title">
+  <title id="rk-title">RunKiln</title>
+  <defs>
+    <linearGradient id="rk-ember" gradientUnits="userSpaceOnUse" x1="12" y1="12" x2="224" y2="128">
+      <stop offset="0" stop-color="#FF6A1A"/>
+      <stop offset="1" stop-color="#C9420A"/>
+    </linearGradient>
+  </defs>
+  <g fill="url(#rk-ember)">
+    <!-- R: 4x5 grid -->
+    <rect x="12" y="12" width="20" height="20" rx="3"/>
+    <rect x="36" y="12" width="20" height="20" rx="3"/>
+    <rect x="60" y="12" width="20" height="20" rx="3"/>
+    <rect x="12" y="36" width="20" height="20" rx="3"/>
+    <rect x="84" y="36" width="20" height="20" rx="3"/>
+    <rect x="12" y="60" width="20" height="20" rx="3"/>
+    <rect x="36" y="60" width="20" height="20" rx="3"/>
+    <rect x="60" y="60" width="20" height="20" rx="3"/>
+    <rect x="12" y="84" width="20" height="20" rx="3"/>
+    <rect x="60" y="84" width="20" height="20" rx="3"/>
+    <rect x="12" y="108" width="20" height="20" rx="3"/>
+    <rect x="84" y="108" width="20" height="20" rx="3"/>
+    <!-- K: 4x5 grid -->
+    <rect x="132" y="12" width="20" height="20" rx="3"/>
+    <rect x="204" y="12" width="20" height="20" rx="3"/>
+    <rect x="132" y="36" width="20" height="20" rx="3"/>
+    <rect x="180" y="36" width="20" height="20" rx="3"/>
+    <rect x="132" y="60" width="20" height="20" rx="3"/>
+    <rect x="156" y="60" width="20" height="20" rx="3"/>
+    <rect x="132" y="84" width="20" height="20" rx="3"/>
+    <rect x="180" y="84" width="20" height="20" rx="3"/>
+    <rect x="132" y="108" width="20" height="20" rx="3"/>
+    <rect x="204" y="108" width="20" height="20" rx="3"/>
+  </g>
+</svg>

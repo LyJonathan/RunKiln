@@ -1,0 +1,644 @@
+# RunKiln router catalog (ships with the package; override per user in ~/.runkiln/agent/router.yaml).
+#
+# Ported from RunRouter (config/skills.yaml + models.yaml). Prices, context windows, max output and
+# reasoning efforts are NOT repeated here: they come from RunInfra's live catalog (GET /v1/models, cached
+# 24 h in ~/.runkiln/agent/cache/runinfra-catalog.json), with models.yaml as the offline fallback. To pin a
+# value anyway (a price the API gets wrong, a smaller context), set it per model in a user router.yaml:
+#   models: { some-model: { catalog: { price: { in: 0.1, out: 0.4, cached_in: 0.01 }, context: 262144,
+#                                      max_output: 16384, reasoning_efforts: [none, low] } } }
+# An override beats both the live catalog and models.yaml; `catalog: null` clears one.
+# This file holds only what the router needs on top: the skill taxonomy the classifier picks from,
+# per-model skill scores (0-100), and tuning.
+#
+# A user override file is merged over this one: tuning/thinking/escalation keys replace ours, skills
+# with the same name replace ours (new names are added), and models[id].skills merge per skill.
+# Set `route: false` on a model to keep it out of auto routing. Per model, `max_auto_thinking` caps the
+# level auto routing picks for it in every mode (a level the user picks is not capped), and
+# `auto_off_below` lets it run with thinking off below that effective difficulty despite the floor in
+# thinking.levels (deep skills included). `null` clears either one in a user file.
+version: 1
+
+tuning:
+  # A skill counts as required when the classifier's probability for it is >= this.
+  skill_threshold: 0.12
+  max_secondary_skills: 3
+  # Required minimum skill score = req_base + difficulty * req_span (primary skill);
+  # secondary skills need secondary_factor of that.
+  req_base: 20
+  req_span: 75
+  secondary_factor: 0.8
+  # Low classifier confidence raises effective difficulty by (1 - confidence) * this.
+  low_confidence_boost: 0.15
+  # Quality band: among feasible models costing at most this fraction more than the cheapest one,
+  # the larger skill margin wins. 0.5 leans toward quality (the "medium" mode); see modes below.
+  cost_tiebreak_frac: 0.5
+  # Keep the model already in use unless switching saves more than this fraction of the estimated
+  # cost. Switching also loses the provider prompt cache, which the cost estimate already charges.
+  stickiness: 0.25
+  # Expected answer length used for cost estimates and the context-fit check.
+  default_output_tokens: 2048
+  # Conversational momentum: a new turn keeps max(difficulty, previous * momentum_decay).
+  momentum_decay: 0.85
+  # Momentum resets after this long without a request.
+  session_idle_reset_min: 30
+  # Above this many context tokens the router also requires the longctx skill.
+  longctx_tokens: 131072
+  # A model whose request failed is skipped for this long.
+  failed_model_cooldown_sec: 300
+
+# Routing modes (auto:low, auto:medium, auto:high). The tuning and thinking above are "medium";
+# a mode overrides only what it lists. thinking.shift moves every chosen level up or down.
+# Per-mode thinking policy (null clears a bound):
+#   min_thinking   hard floor on the level the router sends in this mode
+#   max_thinking   hard cap; escalation (tool errors, failing tests, momentum) may pick a stronger model
+#                  but never a deeper level. A level the user pinned (shift+tab) ignores both bounds.
+#   trivial_below  a turn whose own difficulty (no momentum) is below this is trivial: cheapest feasible
+#                  model at the lowest level min_thinking allows. 0 turns it off.
+modes:
+  low:
+    description: "cost-efficient: lower bars, cheapest capable model, lighter thinking"
+    tuning: { req_base: 15, req_span: 60, cost_tiebreak_frac: 0.05 }
+    # max_thinking is the cap here (no thinking.max_auto: it would sit above the cap and never apply).
+    thinking: { shift: -1, beyond_cap_when_short: false }
+    max_thinking: low
+    # quality selection: a wider band (cheapest pair within 0.10 of the best at <= low thinking).
+    tolerance: 0.10
+    # Cache pricing for this band (quality.cache below, tuned on bench/router/session-replay.mts seeds 1, 2, 3, 7).
+    # The three low pairs sit within 0.06 of each other on most work, so a switch inside the band rarely pays for
+    # its miss: clear_gain at the band width keeps the warm pair there, and since the session then stays on its
+    # first pick, that pick weighs pass rate too (first_turn_quality). Out of the band the gain is priced over a
+    # longer horizon, so a warm pair that falls behind (ds:off on hard math) is left.
+    cache: { clear_gain: 0.10, failed_turn_usd: 0.065, horizon_turns: 6, first_turn_quality: 0.2 }
+  medium:
+    description: "balanced: cost-aware, leans toward quality"
+  high:
+    description: "deepest: strongest model and deepest thinking, for the hardest tasks"
+    tuning: { req_base: 30, req_span: 70, cost_tiebreak_frac: 10, stickiness: 0 }
+    thinking: { shift: 1, max_auto: max, prefer: highest }
+    # Greetings, acks and one-line lookups: cheapest model, but still thinking at least "low".
+    min_thinking: low
+    trivial_below: 0.2
+    # quality selection: the best pair (within 0.02), deeper thinking on ties.
+    tolerance: 0.02
+
+# RunInfra models with no entry under `models` (new in the live catalog) are routed with these
+# scores until someone benches them: skill_score for every skill, plus a price prior (a pricier model
+# is assumed somewhat stronger), clamped to [min_score, max_score]. Override per model below.
+unknown_model:
+  skill_score: 45
+  price_scaling: 8
+  min_score: 25
+  max_score: 70
+  route: true
+
+# Difficulty added for harness signals seen in the current turn (tool loop since the last user message).
+escalation:
+  tool_error: 0.08          # per failed tool call
+  tool_error_cap: 0.24
+  test_failure: 0.15        # a test/typecheck command failed (once per turn)
+  user_retry: 0.10          # the user says it still fails / is wrong / try again
+  multi_file: 0.05          # 3+ distinct files edited this turn
+  long_loop: 0.05           # 25+ tool calls without finishing
+
+# Router v2: quality-curve selection. For each (model, thinking level) pair the router estimates the pass
+# rate for this turn's task kind at its difficulty (curves below, interpolated between the anchors) and its
+# cost (input at the warm-cache or full price + answer tokens + the pair's reasoning tokens at that
+# difficulty, all at the model's output price). It keeps the pairs within the mode's tolerance of the best
+# pass rate and takes the cheapest (high mode: the best, deeper on ties). So thinking follows difficulty
+# per model, measured: deepseek thinks on hard algo/math because off/xhigh/max lose there; GLM low wins easy
+# and medium because nothing beats it and it is cheapest.
+#
+# Curves: `node bench/router/calibrate.mjs` from bench/quality/reports/2026-10-15-suite-calls.jsonl.gz
+# (340 trials per pair). Rates are shrunk (empirical Bayes): pair-tier toward the all-pairs tier rate
+# (strength 20), pair-kind-tier toward the pair-tier rate (strength 8). Easy and medium use the pair-tier
+# rate for every kind (no pair differs there, p >= 0.05); hard uses per-kind cells. "raw" comments are the
+# measured passed/trials. `selection: scores` (or `quality: null`) in a user file restores the skill-score
+# selector above.
+selection: quality
+quality:
+  # Difficulty of the trivial, easy, medium, hard and frontier anchors. Trivial uses the easy rates;
+  # frontier = hard ^ frontier_exponent (no data above hard: widens the gaps, keeps the order).
+  anchors: [0, 0.25, 0.5, 0.75, 1.0]
+  frontier_exponent: 2
+  # Medium mode: pairs within this of the best pass rate are good enough; the cheapest wins.
+  # (The suite separates ~0.08 at n = 128; 0.04 keeps ds:high/low apart from ds:none on hard work.)
+  tolerance: 0.04
+  # Answer tokens per classifier output-length level (tiny, short, long, very long), plus the default.
+  answer_tokens: [150, 700, 2500, 6000]
+  default_answer_tokens: 900
+  # A routable model with no curves (unbenched: new in the live RunInfra catalog, or never run through the
+  # suite) borrows the closest benched model's curves (by output price, a vision mismatch counting as one
+  # doubling; reference_model when none is available), offset by (its skill score - the lender's) / 100 for
+  # the kind's skill, minus this penalty. unbenched_policy last_resort: auto picks an unbenched pair only when
+  # no benched pair fits the request (vision, context); "penalty" lets it compete. Manual use is unaffected.
+  # The nightly mini-bench (npm run bench:mini) flags new unbenched models and proposes curves for them.
+  unbenched_penalty: 0.05
+  unbenched_policy: last_resort
+  reference_model: glm-5-3-flash
+  kind_skills: { chat: chat, code: code.bugfix, algo: code.algo, math: math, agentic: agent, terminal: code.cli }
+  # Terminal work (build, CI, shell, Docker) is not in our suite: it uses the agentic curves plus the lean below.
+  kind_from: { terminal: agentic }
+  # Public benchmarks (bench/quality/reports/2026-10-15-public-benchmarks.md), pass-rate points at the hard
+  # anchor, half at medium, none below. Terminal: independent Terminal-Bench 4.0 favours GLM (AA 33% vs 27%,
+  # Vals 37% vs 20%). Agentic: DeepSWE 74 vs 63, NL2Repo 64 vs 56, Vals vibe/migration code favour DeepSeek
+  # (vendor-reported or single-source, so a small lean on top of our own tool-use runs).
+  priors:
+    terminal: { glm-5-3-flash: 0.05, deepseek-v4-1-flash-1017: -0.05 }
+    agentic: { deepseek-v4-1-flash-1017: 0.02 }
+  # Escalation: after a failed turn (request error, tests still failing, repeated tool errors, "still
+  # broken"), the next turn needs a pair at least step_margin better than the one that failed; two failures
+  # in a row step twice. A turn that ends well resets it.
+  step_margin: 0.02
+  max_steps: 2
+  # Cache-aware routing (router v3). RunInfra keeps one prompt cache per (model, thinking) pair on a session for
+  # the idle TTL (bench/cache/probes-2026-10-17.md): switching misses once on the new pair, a return within the TTL
+  # is warm up to where that pair left off, and a thinking change is a switch. Each pair in the band is priced over
+  # the next horizon_turns: the miss now, the turns after it warm, and return_probability x the miss back (the
+  # context growth, turn_growth_tokens per turn; the whole prompt when the session's pace says the warm pair would
+  # expire before the return), less pass rate x horizon_turns x failed_turn_usd. The lowest wins, so the warm pair
+  # is kept unless a better or cheaper pair pays for its miss. On a session's first turn the cheapest good pair
+  # wins, as without a cache (first_turn_quality > 0 weighs its pass rate too). Inside a tool loop only hard
+  # failures escalate, in one jump to max_steps. A mode may override the pricing keys (modes.<mode>.cache).
+  # Tuned on bench/router/session-replay.mts (seeds 1, 2, 3, 7; see bench/router/README.md).
+  # `enabled: false` restores one-turn pricing.
+  cache:
+    enabled: true
+    ttl_sec: 900
+    horizon_turns: 4
+    return_probability: 0.5
+    turn_growth_tokens: 4000
+    failed_turn_usd: 0.035
+    clear_gain: 0.02
+    first_turn_quality: 0
+  # deepseek-v4-1-flash-1017: off, low and high from its own full suite run (2026-10-17, r1 + r2 like the 2026-10-15
+  # run, bench/quality/reports/2026-10-17-suite-deepseek-v4-1-flash-1017.md), calibrated with the 2026-10-15 trials in
+  # the shrinkage pool; xhigh and max were not run and keep deepseek-v4-1-flash's curves. Medium was run too (92.4%,
+  # between low and high) but is not shipped: RunInfra does not list it, so the router could not send it.
+  models:
+    deepseek-v4-1-flash-1017:
+      ttft_ms: 30
+      levels:
+        high:
+          reasoning_tokens: [118, 325, 3960]
+          chat: [0.91, 0.95, 0.87]   # raw 15/15 - -
+          code: [0.91, 0.95, 0.94]   # raw 24/30 83/90 10/10
+          algo: [0.91, 0.95, 0.75]   # raw - 20/20 29/40
+          math: [0.91, 0.95, 0.94]   # raw 15/15 30/30 66/70
+          agentic: [0.91, 0.95, 0.93]   # raw 4/4 8/8 8/8
+        low:
+          reasoning_tokens: [116, 365, 3232]
+          chat: [0.93, 0.95, 0.89]   # raw 15/15 - -
+          code: [0.93, 0.95, 0.95]   # raw 26/30 83/90 10/10
+          algo: [0.93, 0.95, 0.81]   # raw - 20/20 32/40
+          math: [0.93, 0.95, 0.94]   # raw 15/15 30/30 66/70
+          agentic: [0.93, 0.95, 0.94]   # raw 4/4 8/8 8/8
+        max:   # copied from deepseek-v4-1-flash: not run on 1017
+          reasoning_tokens: [311, 891, 6496]
+          chat: [0.92, 0.95, 0.74]   # raw 15/15 - -
+          code: [0.92, 0.95, 0.61]   # raw 25/30 83/90 5/10
+          algo: [0.92, 0.95, 0.5]   # raw - 20/20 18/40
+          math: [0.92, 0.95, 0.91]   # raw 15/15 30/30 65/70
+          agentic: [0.92, 0.95, 0.81]   # raw 4/4 8/8 7/8
+        "off":
+          reasoning_tokens: [0, 0, 0]
+          chat: [0.92, 0.95, 0.73]   # raw 15/15 - -
+          code: [0.92, 0.95, 0.88]   # raw 25/30 83/90 10/10
+          algo: [0.92, 0.95, 0.48]   # raw - 20/20 17/40
+          math: [0.92, 0.95, 0.82]   # raw 15/15 29/30 58/70
+          agentic: [0.92, 0.95, 0.8]   # raw 4/4 8/8 7/8
+        xhigh:   # copied from deepseek-v4-1-flash: not run on 1017
+          reasoning_tokens: [373, 759, 5934]
+          chat: [0.92, 0.94, 0.74]   # raw 15/15 - -
+          code: [0.92, 0.94, 0.66]   # raw 25/30 81/90 6/10
+          algo: [0.92, 0.94, 0.52]   # raw - 20/20 19/40
+          math: [0.92, 0.94, 0.87]   # raw 15/15 30/30 62/70
+          agentic: [0.92, 0.94, 0.87]   # raw 4/4 8/8 8/8
+    glm-5-3-flash:
+      ttft_ms: 703
+      levels:
+        high:
+          reasoning_tokens: [21, 150, 4368]
+          chat: [0.9, 0.93, 0.69]   # raw 14/15 - -
+          code: [0.9, 0.93, 0.86]   # raw 25/30 82/90 10/10
+          algo: [0.9, 0.93, 0.47]   # raw - 19/20 17/40
+          math: [0.9, 0.93, 0.75]   # raw 15/15 29/30 53/70
+          agentic: [0.9, 0.93, 0.78]   # raw 3/4 8/8 7/8
+        low:
+          reasoning_tokens: [11, 22, 1863]
+          chat: [0.91, 0.91, 0.56]   # raw 15/15 - -
+          code: [0.91, 0.91, 0.75]   # raw 26/30 80/90 9/10
+          algo: [0.91, 0.91, 0.3]   # raw - 20/20 10/40
+          math: [0.91, 0.91, 0.61]   # raw 14/15 26/30 43/70
+          agentic: [0.91, 0.91, 0.65]   # raw 3/4 8/8 6/8
+        max:
+          reasoning_tokens: [363, 855, 7019]
+          chat: [0.9, 0.93, 0.72]   # raw 15/15 - -
+          code: [0.9, 0.93, 0.88]   # raw 25/30 80/90 10/10
+          algo: [0.9, 0.93, 0.43]   # raw - 20/20 15/40
+          math: [0.9, 0.93, 0.83]   # raw 14/15 30/30 59/70
+          agentic: [0.9, 0.93, 0.86]   # raw 3/4 8/8 8/8
+
+
+thinking:
+  # A candidate is a (model, thinking level) pair: the level adds quality_bonus points to every skill
+  # score and multiplies output cost (output_multiplier). Per model the router takes the lowest level
+  # that clears the bar (or the highest allowed, with prefer: highest), then the cheapest model. So a
+  # hard task can stay on a cheap model at high/max thinking before it moves to a pricier model.
+  quality_bonus: { "off": 0, minimal: 2, low: 4, medium: 7, high: 10, xhigh: 12, max: 14 }
+  prefer: lowest
+  # Minimum level for an effective difficulty below each bound (the router may go higher, never lower).
+  levels:
+    - [0.30, "off"]
+    - [0.55, minimal]
+    - [0.75, low]
+    - [0.90, medium]
+    - [1.01, high]
+  # Highest level the router picks on its own in medium mode (high mode allows max; low mode is held at
+  # low by its max_thinking, a hard cap that also bounds this).
+  max_auto: xhigh
+  # When no level up to max_auto clears the bar on a model, use a higher one before a pricier model.
+  beyond_cap_when_short: true
+  # One level higher for these primary skills, one lower for the light ones.
+  deep_skills: [reason.deep, math.proof, math, reason, code.algo, code.concurrency, code.arch, code.security, code.perf, code.systems, plan, analyze]
+  light_skills: [chat, idle, translate, summarize, write, write.copy, write.edit, classify, data.convert, code.trivial, roleplay, brainstorm]
+  # Output-token multiplier per level, for cost estimates (reasoning tokens are billed as output).
+  output_multiplier: { "off": 1, minimal: 1.2, low: 1.5, medium: 2, high: 3, xhigh: 4, max: 5 }
+
+skills:
+  - { name: code.ui, desc: "UI components, layouts, interactive widgets" }
+  - { name: code.css, desc: "Styling, CSS, animations, visual polish" }
+  - { name: code.frontend, desc: "Client-side app logic, state, frameworks" }
+  - { name: code.backend, desc: "Server-side logic, handlers, services" }
+  - { name: code.api, desc: "API design/implementation, REST endpoints, clients" }
+  - { name: code.refactor, desc: "Restructure code without behavior change" }
+  - { name: code.bugfix, desc: "Diagnose and fix bugs, errors, crashes" }
+  - { name: code.arch, desc: "System design, architecture decisions, service boundaries" }
+  - { name: code.tests, desc: "Write/fix unit, integration, e2e tests" }
+  - { name: code.docs, desc: "Docstrings, README sections, code comments" }
+  - { name: code.perf, desc: "Performance optimization, profiling, bottlenecks" }
+  - { name: code.security, desc: "Vulnerabilities, auth flaws, secure coding, audits" }
+  - { name: code.review, desc: "Code review, PR feedback, quality assessment" }
+  - { name: code.git, desc: "Git workflows, commits, merges, history surgery" }
+  - { name: code.sql, desc: "SQL queries, schema design, query optimization" }
+  - { name: code.data, desc: "Data science code, pandas, notebooks, analysis" }
+  - { name: code.regex, desc: "Regular expressions, pattern matching" }
+  - { name: code.types, desc: "Type systems, generics, annotations, type errors" }
+  - { name: code.concurrency, desc: "Threads, async, races, deadlocks, parallelism" }
+  - { name: code.build, desc: "Build systems, compilers, bundlers, make/cargo/webpack" }
+  - { name: code.deps, desc: "Dependency management, version conflicts, upgrades" }
+  - { name: code.devops, desc: "Infrastructure, deploys, IaC, servers" }
+  - { name: code.docker, desc: "Containers, Dockerfiles, compose, k8s basics" }
+  - { name: code.ci, desc: "CI/CD pipelines, GitHub Actions, test automation" }
+  - { name: code.mobile, desc: "iOS/Android/mobile development" }
+  - { name: code.ml, desc: "ML code: training, inference, datasets, evals" }
+  - { name: code.migrate, desc: "Port code between languages/versions/frameworks" }
+  - { name: code.cli, desc: "Shell commands, scripts, terminal tooling" }
+  - { name: code.auth, desc: "Authentication, authorization, sessions, OAuth, JWT" }
+  - { name: code.db, desc: "Database design, migrations, indexing, NoSQL" }
+  - { name: code.algo, desc: "Algorithms, data structures, complexity" }
+  - { name: code.a11y, desc: "Accessibility, ARIA, screen readers, WCAG" }
+  - { name: code.i18n, desc: "Internationalization, locale handling, RTL" }
+  - { name: code.graphql, desc: "GraphQL schemas, resolvers, queries" }
+  - { name: code.network, desc: "Networking code, protocols, sockets, HTTP internals" }
+  - { name: code.config, desc: "Config files, env management, settings schemas" }
+  - { name: code.tooling, desc: "Linters, formatters, dev tooling, editor setup" }
+  - { name: code.prompt, desc: "Prompt engineering, LLM system prompts, evals" }
+  - { name: code.trivial, desc: "Trivially small code tasks: one-liners, renames, tiny fixes" }
+  - { name: code.game, desc: "Game development, engines, shaders, physics" }
+  - { name: code.systems, desc: "Low-level/systems code: OS, drivers, memory, FFI" }
+  - { name: code.embedded, desc: "Embedded/MCU code, firmware, RTOS, hardware" }
+  - { name: vision.screenshot, desc: "Interpret screenshots, UI captures, app images" }
+  - { name: vision.diagram, desc: "Understand diagrams, charts, architecture pictures" }
+  - { name: vision.ocr, desc: "Extract text from images/scans" }
+  - { name: vision.chart, desc: "Read values/trends from charts and plots" }
+  - { name: chat, desc: "Casual conversation, greetings, small talk, simple Q&A" }
+  - { name: idle, desc: "Near-empty input: pings, acks, filler" }
+  - { name: explain, desc: "Explain a concept clearly, teaching, ELI5" }
+  - { name: support, desc: "Customer-support replies, ticket triage, tone-aware responses" }
+  - { name: roleplay, desc: "Adopt a persona, in-character dialogue, creative roleplay" }
+  - { name: reason, desc: "Multi-step logical reasoning, puzzles, deduction" }
+  - { name: reason.deep, desc: "Long chain-of-thought, research-grade or contest-level reasoning" }
+  - { name: math, desc: "Arithmetic, algebra, calculus, probability, numeric answers" }
+  - { name: math.proof, desc: "Formal proofs, theorem verification, derivations" }
+  - { name: write, desc: "General prose writing, drafting, long-form content" }
+  - { name: write.copy, desc: "Marketing copy, slogans, ads, landing pages" }
+  - { name: write.academic, desc: "Essays, papers, abstracts, citations, formal tone" }
+  - { name: write.edit, desc: "Proofreading, rewriting, rephrasing, style improvements" }
+  - { name: translate, desc: "Translate between languages, localization" }
+  - { name: plan, desc: "Planning, itineraries, roadmaps, schedules, project breakdown" }
+  - { name: analyze, desc: "Comparative analysis, trade-offs, evaluation, critique of ideas" }
+  - { name: brainstorm, desc: "Idea generation, naming, creative alternatives" }
+  - { name: classify, desc: "Label, categorize, or score given text into provided classes" }
+  - { name: science, desc: "Physics, chemistry, biology questions and explanations" }
+  - { name: legal, desc: "Contracts, clauses, compliance, regulatory analysis" }
+  - { name: medical, desc: "Clinical, symptoms, drug, and health-domain questions" }
+  - { name: finance, desc: "Financial analysis, valuation, markets, accounting" }
+  - { name: summarize, desc: "Condense text, TL;DR, extract key points" }
+  - { name: data.extract, desc: "Pull structured fields/entities out of unstructured text" }
+  - { name: data.etl, desc: "Transform/clean datasets, pipeline logic, format wrangling" }
+  - { name: data.convert, desc: "Convert between formats (md↔html, csv↔json, etc.)" }
+  - { name: json.mode, desc: "Strict JSON/schema-conformant machine-readable output" }
+  - { name: rag, desc: "Answer strictly from provided documents/context" }
+  - { name: longctx, desc: "Reason over very long documents or whole codebases" }
+  - { name: tool.call, desc: "Emit function/tool call arguments, API payloads" }
+  - { name: agent, desc: "Multi-step agentic work: plan + call tools + iterate" }
+  - { name: safety, desc: "Content moderation, policy checks, harm classification" }
+
+models:
+  # Re-benched 2026-10-15 (bench/quality pair mode, reports/2026-10-15-deepseek-v4-1-vs-glm-5-3.md), then with
+  # the suite (reports/2026-10-15-suite-deepseek-v4-1-vs-glm-5-3.md: EvalPlus, LiveCodeBench v6, MATH-500,
+  # AIME 2026, agentic CLI runs; 340 trials per pair, Wilson CIs, McNemar). Suite changes, only where the
+  # difference is outside the noise:
+  # - code.algo 68 -> 76, math 62 -> 72 (glm + 6): on the hard tier V4.1 at low/high beats glm-5-3-flash at
+  #   every level, max included (88%/84% vs 72%, p < 0.001; LiveCodeBench hard and AIME carry it), and at
+  #   none it matches glm:max. +6 is the conservative end (high must beat max: > +4); not the point estimate.
+  # - tool.call 34 -> 58, agent 28 -> 54 (= glm): 20 agentic runs per pair, 95-100% vs glm 85-95%, no
+  #   significant difference, so parity instead of a 24-point penalty that kept it out of tool turns.
+  # - code.* other than algo stay glm - 2 (no difference on HumanEval+/MBPP+/legacy code/agentic edits).
+  # Easy and medium tiers show no significant difference between any two pairs.
+  # Thinking (same suite):
+  # - max_auto_thinking high: at the 16k output cap xhigh/max truncate on 29-30 of 128 hard trials (high 15,
+  #   low 11) and lose to low on the hard tier (95 vs 112 of 128, p = 0.0002) at 1.5-1.7x the cost. So auto
+  #   routing stops at high in every mode (and never escalates past it on this model); /thinking or a pinned
+  #   level can still pick xhigh/max.
+  # - auto_off_below 0.55: the floor from difficulty 0.30 (`minimal`) has no deepseek level and rounded up to
+  #   low. Medium tier: none = low (140 vs 140 of 148, p = 1.0; algo/math too) at half the cost, 20/20 agentic.
+  #   Hard tier: none 92 vs low 112 of 128 (p < 0.0001), so from 0.55 (where the floor is `low`) the floor
+  #   holds. 0.55 rather than 0.75: the classifier's difficulty is not calibrated to the tiers and the route
+  #   table already sends hard algo/math work at 0.6+, where none would cost 16 points; below 0.55 it saves
+  #   about half the cost with no measured loss. GLM is unaffected (no off level; minimal maps to low).
+  deepseek-v4-1-flash-1017:
+    intelligence: 58
+    max_auto_thinking: high
+    auto_off_below: 0.55
+    skills:
+      code.ui: 77
+      code.css: 75
+      code.frontend: 75
+      code.backend: 71
+      code.api: 71
+      code.refactor: 73
+      code.bugfix: 74
+      code.arch: 73
+      code.tests: 72
+      code.docs: 71
+      code.perf: 69
+      code.security: 67
+      code.review: 73
+      code.git: 69
+      code.sql: 69
+      code.data: 69
+      code.regex: 69
+      code.types: 70
+      code.concurrency: 67
+      code.build: 69
+      code.deps: 69
+      code.devops: 68
+      code.docker: 69
+      code.ci: 69
+      code.mobile: 67
+      code.ml: 68
+      code.migrate: 71
+      code.cli: 69
+      code.auth: 69
+      code.db: 69
+      code.algo: 76
+      code.a11y: 32
+      code.i18n: 34
+      code.graphql: 69
+      code.network: 68
+      code.config: 69
+      code.tooling: 69
+      code.prompt: 71
+      code.trivial: 90
+      code.game: 73
+      code.systems: 68
+      code.embedded: 65
+      vision.screenshot: 0
+      vision.diagram: 0
+      vision.ocr: 0
+      vision.chart: 0
+      chat: 58
+      explain: 42
+      support: 44
+      roleplay: 40
+      reason: 64
+      reason.deep: 34
+      math: 72
+      math.proof: 30
+      write: 54
+      write.copy: 40
+      write.academic: 36
+      write.edit: 38
+      translate: 54
+      plan: 36
+      analyze: 36
+      brainstorm: 40
+      classify: 36
+      science: 34
+      legal: 32
+      medical: 30
+      finance: 32
+      summarize: 60
+      data.extract: 38
+      data.etl: 34
+      data.convert: 38
+      json.mode: 38
+      rag: 36
+      longctx: 30
+      tool.call: 58
+      agent: 54
+      safety: 30
+  # Re-benched 2026-10-15 (same report): low passed 30/30 easy+medium and 17/20 hard, high 19/20 hard at a
+  # fifth of the cost of max (19/20). code.* raised 15 (cap 92) so high clears the medium-mode bar up to
+  # difficulty ~0.88 instead of escalating to max from ~0.65; math +8, reason +6 (9/10 hard math at low/high).
+  glm-5-3-flash:
+    intelligence: 60
+    skills:
+      code.ui: 79
+      code.css: 77
+      code.frontend: 77
+      code.backend: 73
+      code.api: 73
+      code.refactor: 75
+      code.bugfix: 76
+      code.arch: 75
+      code.tests: 74
+      code.docs: 73
+      code.perf: 71
+      code.security: 69
+      code.review: 75
+      code.git: 71
+      code.sql: 71
+      code.data: 71
+      code.regex: 71
+      code.types: 72
+      code.concurrency: 69
+      code.build: 71
+      code.deps: 71
+      code.devops: 70
+      code.docker: 71
+      code.ci: 71
+      code.mobile: 69
+      code.ml: 70
+      code.migrate: 73
+      code.cli: 71
+      code.auth: 71
+      code.db: 71
+      code.algo: 70
+      code.a11y: 58
+      code.i18n: 56
+      code.graphql: 71
+      code.network: 70
+      code.config: 71
+      code.tooling: 71
+      code.prompt: 73
+      code.trivial: 92
+      code.game: 75
+      code.systems: 70
+      code.embedded: 67
+      vision.screenshot: 72
+      vision.diagram: 64
+      vision.ocr: 66
+      vision.chart: 62
+      chat: 52
+      explain: 60
+      support: 56
+      roleplay: 52
+      reason: 66
+      reason.deep: 58
+      math: 66
+      math.proof: 55
+      write: 50
+      write.copy: 52
+      write.academic: 54
+      write.edit: 56
+      translate: 50
+      plan: 59
+      analyze: 58
+      brainstorm: 54
+      classify: 58
+      science: 56
+      legal: 54
+      medical: 54
+      finance: 55
+      summarize: 62
+      data.extract: 62
+      data.etl: 56
+      data.convert: 60
+      json.mode: 62
+      rag: 60
+      longctx: 55
+      tool.call: 58
+      agent: 54
+      safety: 55
+  qwen3-8-27b:
+    intelligence: 52
+    skills:
+      code.ui: 54
+      code.css: 53
+      code.frontend: 54
+      code.backend: 52
+      code.api: 52
+      code.refactor: 52
+      code.bugfix: 53
+      code.arch: 50
+      code.tests: 52
+      code.docs: 53
+      code.perf: 50
+      code.review: 52
+      code.a11y: 52
+      code.trivial: 40
+      code.game: 50
+      code.systems: 48
+      code.embedded: 44
+      vision.screenshot: 56
+      vision.diagram: 54
+      vision.ocr: 52
+      vision.chart: 50
+      chat: 52
+      explain: 54
+      support: 52
+      roleplay: 48
+      reason: 52
+      reason.deep: 48
+      math: 50
+      math.proof: 46
+      write: 52
+      write.copy: 50
+      write.academic: 50
+      write.edit: 52
+      translate: 54
+      plan: 50
+      analyze: 50
+      brainstorm: 50
+      classify: 50
+      science: 50
+      legal: 48
+      medical: 48
+      finance: 48
+      summarize: 54
+      data.extract: 54
+      data.etl: 50
+      data.convert: 52
+      json.mode: 54
+      rag: 52
+      longctx: 48
+      tool.call: 50
+      agent: 44
+      safety: 48
+  ornith-1-5-35b:
+    intelligence: 50
+    skills:
+      code.ui: 52
+      code.css: 50
+      code.frontend: 52
+      code.backend: 52
+      code.api: 52
+      code.refactor: 52
+      code.bugfix: 54
+      code.arch: 48
+      code.tests: 52
+      code.review: 52
+      code.trivial: 38
+      code.game: 48
+      code.systems: 44
+      code.embedded: 40
+      vision.screenshot: 54
+      vision.diagram: 52
+      vision.ocr: 50
+      vision.chart: 48
+      chat: 50
+      explain: 50
+      support: 50
+      roleplay: 46
+      reason: 48
+      reason.deep: 44
+      math: 48
+      math.proof: 44
+      write: 50
+      write.copy: 48
+      write.academic: 46
+      write.edit: 48
+      translate: 50
+      plan: 50
+      analyze: 48
+      brainstorm: 46
+      classify: 46
+      science: 46
+      legal: 44
+      medical: 44
+      finance: 44
+      summarize: 50
+      data.extract: 50
+      data.etl: 46
+      data.convert: 48
+      json.mode: 50
+      rag: 48
+      longctx: 46
+      tool.call: 46
+      agent: 40
+      safety: 44
+  # No cache hits and always thinks (models.yaml notes): keep it out of auto until benched.
+  nemotron-3-5-lightning-30b:
+    route: false
