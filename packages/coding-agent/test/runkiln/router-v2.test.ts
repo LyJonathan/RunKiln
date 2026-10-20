@@ -677,7 +677,11 @@ describe("ModelRouter with quality selection", () => {
 
 		it("an idle reset clears the anchor", async () => {
 			let now = 1_000_000;
-			const { router } = v2(() => ({ kind: "algo", difficulty: 0.8 }), BENCHED, () => now);
+			const { router } = v2(
+				() => ({ kind: "algo", difficulty: 0.8 }),
+				BENCHED,
+				() => now,
+			);
 			await router.route(turn("suffix automaton for 10^6"));
 			await router.route(turn("ok thanks"));
 			now += CATALOG.tuning.sessionIdleResetMin * 60_000 + 1000;

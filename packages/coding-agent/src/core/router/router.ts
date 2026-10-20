@@ -961,7 +961,8 @@ export class ModelRouter {
 			};
 		} else if (previous && ((classification.ambiguity ?? 0) >= 0.5 || classification.confidence < 0.5)) {
 			// Momentum from the higher of the previous turn and the work in progress.
-			const carried = Math.max(previous.baseDifficulty, anchor?.baseDifficulty ?? 0) * this.catalog.tuning.momentumDecay;
+			const carried =
+				Math.max(previous.baseDifficulty, anchor?.baseDifficulty ?? 0) * this.catalog.tuning.momentumDecay;
 			if (carried > baseDifficulty) {
 				baseDifficulty = carried;
 				momentumApplied = true;
