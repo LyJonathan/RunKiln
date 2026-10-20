@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.1.3]
+
 ### Fixed
 
 - RunInfra requests keep at most 8 images (the hosted inference limit, history included): older images are replaced with a text placeholder instead of failing with 400.

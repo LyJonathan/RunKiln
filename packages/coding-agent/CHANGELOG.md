@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.1.3]
+
 ### Fixed
 
 - Sessions with more than 8 images no longer fail with RunInfra's 400 "at most 8 images per request": only the newest 8 images are sent, older ones become a short placeholder.

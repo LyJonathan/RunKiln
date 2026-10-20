@@ -1,6 +1,6 @@
 {
 	"name": "@runkiln/agent-core",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"description": "General-purpose agent with transport abstraction, state management, and attachment support",
 	"type": "module",
 	"main": "./dist/index.js",
@@ -24,7 +24,7 @@
 		"test": "vitest --run"
 	},
 	"dependencies": {
-		"@runkiln/ai": "0.1.2",
+		"@runkiln/ai": "0.1.3",
 		"typebox": "1.3.27"
 	},
 	"keywords": [
